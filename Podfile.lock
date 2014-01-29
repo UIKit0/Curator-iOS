@@ -17,6 +17,11 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
+  - Kiwi/ARC (2.2.3)
+  - Kiwi/NonARC (2.2.3)
+  - Kiwi/XCTest (2.2.3):
+    - Kiwi/ARC
+    - Kiwi/NonARC
   - Mantle (1.3.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.3.1)
@@ -24,11 +29,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Kiwi/XCTest
   - Mantle
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
