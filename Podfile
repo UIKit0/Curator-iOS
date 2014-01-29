@@ -1,11 +1,16 @@
 platform :ios, :deployment_target => '7.0'
 
+# Networking
 pod 'AFNetworking'
-pod 'Mantle'
-pod 'SVProgressHUD'
 
-# If you're using Xcode 5 with a brand new project
-# (XCTest based instead of OCUnit based) use this instead:
+# Model
+pod 'Mantle'
+
+# UI
+pod 'SVProgressHUD'
+pod 'NHBalancedFlowLayout'
+
+# Testing
 target :CuratorTests, :exclusive => true do
    pod 'Kiwi/XCTest'
 end

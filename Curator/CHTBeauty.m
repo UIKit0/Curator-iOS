@@ -16,7 +16,7 @@
   return @{
     @"name": @"name",
     @"objectID": @"id",
-    @"imageURL": @"image",
+    @"urlString": @"image",
     @"width": @"width",
     @"height": @"height",
     @"whichDay": @"date"

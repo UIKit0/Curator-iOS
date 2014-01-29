@@ -12,9 +12,9 @@
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, assign, readonly) NSUInteger objectID;
-@property (nonatomic, strong, readonly) NSURL *imageURL;
-@property (nonatomic, assign, readonly) NSUInteger width;
-@property (nonatomic, assign, readonly) NSUInteger height;
+@property (nonatomic, copy, readonly) NSString *urlString;
+@property (nonatomic, assign, readonly) CGFloat width;
+@property (nonatomic, assign, readonly) CGFloat height;
 @property (nonatomic, copy, readonly) NSString *whichDay;
 
 @end

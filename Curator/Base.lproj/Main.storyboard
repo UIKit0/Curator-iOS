@@ -14,10 +14,160 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="0Bg-5C-Uh4" kind="relationship" relationship="viewControllers" id="i5y-G7-FFg"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="539" y="738"/>
+        </scene>
+        <!--Girl Of The Day Overview Controller - 一天一妹-->
+        <scene sceneID="aM5-SB-DzP">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="一天一妹" id="ch8-E5-wlP" customClass="CHTGirlOfTheDayOverviewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="WHw-86-tyz">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="KCh-QF-wb9" customClass="NHBalancedFlowLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="WJ5-HH-WV9" customClass="CHTBeautyCell">
+                                <rect key="frame" x="0.0" y="64" width="319" height="425"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-Hq-TZr">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OX-Li-i0n">
+                                            <rect key="frame" x="0.0" y="380" width="319" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="jSF-B2-5Bt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Q8o-Hq-TZr" firstAttribute="leading" secondItem="WJ5-HH-WV9" secondAttribute="leading" id="9rf-EK-Cf0"/>
+                                    <constraint firstAttribute="bottom" secondItem="0OX-Li-i0n" secondAttribute="bottom" id="Qal-Fk-y3A"/>
+                                    <constraint firstAttribute="trailing" secondItem="0OX-Li-i0n" secondAttribute="trailing" id="RJS-mc-2O3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q8o-Hq-TZr" secondAttribute="trailing" id="URK-tX-Q2H"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q8o-Hq-TZr" secondAttribute="bottom" id="e4o-SK-5DC"/>
+                                    <constraint firstItem="Q8o-Hq-TZr" firstAttribute="top" secondItem="WJ5-HH-WV9" secondAttribute="top" id="egI-77-S7w"/>
+                                    <constraint firstItem="0OX-Li-i0n" firstAttribute="leading" secondItem="WJ5-HH-WV9" secondAttribute="leading" id="q67-XE-9MN"/>
+                                </constraints>
+                                <size key="customSize" width="319" height="425"/>
+                                <connections>
+                                    <outlet property="imageView" destination="Q8o-Hq-TZr" id="mSy-Z0-qCl"/>
+                                    <outlet property="nameLabel" destination="0OX-Li-i0n" id="upi-va-ZHD"/>
+                                    <segue destination="nTl-ui-6kQ" kind="push" identifier="GirlOfTheDayDetail" id="zP9-zb-hFy"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ch8-E5-wlP" id="gwg-u7-WUp"/>
+                            <outlet property="delegate" destination="ch8-E5-wlP" id="PNR-gM-Y4o"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="一天一妹" id="feR-aB-XfE"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXz-pe-BqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864" y="1013"/>
+        </scene>
+        <!--Navigation Controller - 一天一妹-->
+        <scene sceneID="GF8-2P-5W9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Bg-5C-Uh4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="一天一妹" id="8Y5-LW-oih"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q0t-rR-a20">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ch8-E5-wlP" kind="relationship" relationship="rootViewController" id="kzZ-2V-Lww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8Q-vJ-Udz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="1013"/>
+        </scene>
+        <!--Girl Of The Day Detail View Controller - 一天一妹-->
+        <scene sceneID="hnr-sj-8zp">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="一天一妹" id="nTl-ui-6kQ" customClass="CHTGirlOfTheDayDetailViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="qcs-Qx-okP">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="xP8-Wk-oIq" customClass="NHBalancedFlowLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="BJa-bI-1Pl" customClass="CHTBeautyCell">
+                                <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ect-C1-HVy">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub8-k1-INy">
+                                            <rect key="frame" x="0.0" y="380" width="319" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="6r2-uS-6f6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ect-C1-HVy" secondAttribute="bottom" id="Bkw-s0-2kZ"/>
+                                    <constraint firstItem="Ect-C1-HVy" firstAttribute="top" secondItem="BJa-bI-1Pl" secondAttribute="top" id="NhP-yO-Hgy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ect-C1-HVy" secondAttribute="trailing" id="cM2-Vq-scL"/>
+                                    <constraint firstItem="ub8-k1-INy" firstAttribute="leading" secondItem="BJa-bI-1Pl" secondAttribute="leading" id="fJz-l6-IG2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ub8-k1-INy" secondAttribute="bottom" id="ref-rr-aZC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ub8-k1-INy" secondAttribute="trailing" id="vhW-ch-bOX"/>
+                                    <constraint firstItem="Ect-C1-HVy" firstAttribute="leading" secondItem="BJa-bI-1Pl" secondAttribute="leading" id="ynN-4w-TCP"/>
+                                </constraints>
+                                <size key="customSize" width="319" height="425"/>
+                                <connections>
+                                    <outlet property="imageView" destination="Ect-C1-HVy" id="vqu-MX-7Wd"/>
+                                    <outlet property="nameLabel" destination="ub8-k1-INy" id="Vp6-oA-FQf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="nTl-ui-6kQ" id="t87-IE-PGL"/>
+                            <outlet property="delegate" destination="nTl-ui-6kQ" id="Tra-mj-YO2"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="4Yh-x1-f0e"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRD-l8-4df" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3840" y="1013"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
