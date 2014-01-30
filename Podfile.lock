@@ -17,6 +17,7 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
+  - CHTCollectionViewWaterfallLayout (0.5)
   - Kiwi/ARC (2.2.3)
   - Kiwi/NonARC (2.2.3)
   - Kiwi/XCTest (2.2.3):
@@ -30,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - CHTCollectionViewWaterfallLayout
   - Kiwi/XCTest
   - Mantle
   - NHBalancedFlowLayout
@@ -37,6 +39,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  CHTCollectionViewWaterfallLayout: 7f263afec3801ba93538e9524ba79ec0b96c8d64
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   NHBalancedFlowLayout: 3be7c4a41f4dd918445e4823de25bc3cb7a18b4a

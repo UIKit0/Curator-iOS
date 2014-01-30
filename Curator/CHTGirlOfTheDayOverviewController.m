@@ -12,6 +12,7 @@
 #import "CHTBeauty.h"
 #import "CHTBeautyCell.h"
 #import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CHTGirlOfTheDayOverviewController () <NHBalancedFlowLayoutDelegate>
 @property (nonatomic, strong) NSMutableArray *beauties;
@@ -91,6 +92,7 @@
   }
 
   self.isFetching = YES;
+  [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
 
   __weak typeof(self) weakSelf = self;
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDayOverviewAtPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {
@@ -102,12 +104,14 @@
     [strongSelf.collectionView reloadData];
     strongSelf.fetchPage++;
     strongSelf.isFetching = NO;
+    [SVProgressHUD dismiss];
   } failure:^(NSURLSessionDataTask *task, NSError *error) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
     strongSelf.isFetching = NO;
+    [SVProgressHUD dismiss];
     NSLog(@"Error:\n%@", error);
   }];
 }

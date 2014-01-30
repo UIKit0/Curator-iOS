@@ -9,6 +9,7 @@ pod 'Mantle'
 # UI
 pod 'SVProgressHUD'
 pod 'NHBalancedFlowLayout'
+pod 'CHTCollectionViewWaterfallLayout'
 
 # Testing
 target :CuratorTests, :exclusive => true do
