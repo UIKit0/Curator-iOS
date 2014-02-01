@@ -39,9 +39,15 @@
   self.title = self.beauty.name;
 
   NHBalancedFlowLayout *layout = (NHBalancedFlowLayout *)self.collectionViewLayout;
-  layout.minimumLineSpacing = 15;
-  layout.minimumInteritemSpacing = 15;
-  layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
+  CGFloat spacing;
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    spacing = 15;
+  } else {
+    spacing = 5;
+  }
+  layout.minimumLineSpacing = spacing;
+  layout.minimumInteritemSpacing = spacing;
+  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
 
   self.isFetching = NO;
   self.fetchPage = 1;
@@ -98,6 +104,7 @@
   [SVProgressHUD showWithStatus:@"Loading..."];
 
   __weak typeof(self) weakSelf = self;
+
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDay:self.beauty.whichDay atPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {

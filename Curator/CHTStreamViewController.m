@@ -23,6 +23,8 @@
 
 @implementation CHTStreamViewController
 
+CGFloat itemWidth;
+
 #pragma mark - Properties
 
 - (NSMutableArray *)beauties {
@@ -87,7 +89,7 @@
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  return beauty.height * 236 / beauty.width;
+  return beauty.height * itemWidth / beauty.width;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -153,8 +155,17 @@
 
 - (void)setupCollectionViewLayoutForOrientation:(UIInterfaceOrientation)orientation {
   CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
-  layout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
-  layout.itemWidth = 236;
+  CGFloat spacing;
+
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    spacing = 15;
+    itemWidth = 236;
+  } else {
+    spacing = 5;
+    itemWidth = 100;
+  }
+  layout.sectionInset = UIEdgeInsetsMake(0, spacing, 0, spacing);
+  layout.itemWidth = itemWidth;
 
   if (UIInterfaceOrientationIsPortrait(orientation)) {
     layout.columnCount = 3;

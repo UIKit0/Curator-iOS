@@ -8,18 +8,15 @@ Curator-iOS
 
 特色
 ====
-* iPad 大螢幕超爽快
+* iPhone 邊走邊看超開心
+* iPad 大螢幕看起來超爽快
 * 支援快取，看妹不 lag
 * 支援「正妹流」跟「一天一妹」
 
 幫幫忙
 =====
 * 有人可以提供漂亮的圖示嗎？
-
-接下來
-=====
-* 支援 iPhone
-
+* 歡迎 feature/pull request
 
 
 [小海嚴選正妹]: http://curator.im/

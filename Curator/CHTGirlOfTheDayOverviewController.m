@@ -37,9 +37,15 @@
   [super viewDidLoad];
 
   NHBalancedFlowLayout *layout = (NHBalancedFlowLayout *)self.collectionViewLayout;
-  layout.minimumLineSpacing = 15;
-  layout.minimumInteritemSpacing = 15;
-  layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
+  CGFloat spacing;
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    spacing = 15;
+  } else {
+    spacing = 5;
+  }
+  layout.minimumLineSpacing = spacing;
+  layout.minimumInteritemSpacing = spacing;
+  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
 
   self.isFetching = NO;
   self.fetchPage = 1;

@@ -17,6 +17,7 @@
 NIPagingScrollViewDelegate,
 NIPagingScrollViewDataSource
 >
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet NIPagingScrollView *pagingScrollView;
 @end
 
@@ -34,12 +35,27 @@ NIPagingScrollViewDataSource
 
   CHTBeauty *beauty = self.beauties[self.selectedIndex];
   self.title = beauty.name;
+  self.nameLabel.text = beauty.name;
 
   self.pagingScrollView.delegate = self;
   self.pagingScrollView.dataSource = self;
 
   // Trick to make pagingScrollView rotate correctly
   [self performSelector:@selector(triggerPagingScrollView) withObject:nil afterDelay:0.2];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+  }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+  }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -76,6 +92,11 @@ NIPagingScrollViewDataSource
 - (void)pagingScrollViewDidChangePages:(NIPagingScrollView *)pagingScrollView {
   CHTBeauty *beauty = self.beauties[pagingScrollView.centerPageIndex];
   self.title = beauty.name;
+  self.nameLabel.text = beauty.name;
+}
+
+- (IBAction)dismiss:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Private
