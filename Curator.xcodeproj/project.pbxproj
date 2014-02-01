@@ -20,12 +20,13 @@
 		52306D161898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D141898A2C1008592DA /* InfoPlist.strings */; };
 		52306D181898A2C1008592DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52306D171898A2C1008592DA /* main.m */; };
 		52306D1C1898A2C1008592DA /* CHTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52306D1B1898A2C1008592DA /* CHTAppDelegate.m */; };
-		52306D1F1898A2C1008592DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52306D1D1898A2C1008592DA /* Main.storyboard */; };
 		52306D271898A2C1008592DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52306D261898A2C1008592DA /* Images.xcassets */; };
 		52306D2E1898A2C1008592DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D2D1898A2C1008592DA /* XCTest.framework */; };
 		52306D2F1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D301898A2C1008592DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0F1898A2C1008592DA /* UIKit.framework */; };
 		52306D381898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D361898A2C1008592DA /* InfoPlist.strings */; };
+		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
+		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
 		52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */; };
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
@@ -66,12 +67,13 @@
 		52306D191898A2C1008592DA /* Curator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Curator-Prefix.pch"; sourceTree = "<group>"; };
 		52306D1A1898A2C1008592DA /* CHTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHTAppDelegate.h; sourceTree = "<group>"; };
 		52306D1B1898A2C1008592DA /* CHTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHTAppDelegate.m; sourceTree = "<group>"; };
-		52306D1E1898A2C1008592DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52306D261898A2C1008592DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52306D2C1898A2C1008592DA /* CuratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52306D2D1898A2C1008592DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52306D351898A2C1008592DA /* CuratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuratorTests-Info.plist"; sourceTree = "<group>"; };
 		52306D371898A2C1008592DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		528F52C0189D510800BB3997 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		52A5FC5A1898AE8400EFB863 /* CHTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTAtlas.h; sourceTree = "<group>"; };
 		52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTAtlas.m; sourceTree = "<group>"; };
 		52A5FC5E1898B32600EFB863 /* CHTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -218,7 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				52306D261898A2C1008592DA /* Images.xcassets */,
-				52306D1D1898A2C1008592DA /* Main.storyboard */,
+				528F52C0189D510800BB3997 /* iPad.storyboard */,
+				528F52BD189D4ED000BB3997 /* iPhone.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -335,7 +338,8 @@
 			files = (
 				52306D271898A2C1008592DA /* Images.xcassets in Resources */,
 				52306D161898A2C1008592DA /* InfoPlist.strings in Resources */,
-				52306D1F1898A2C1008592DA /* Main.storyboard in Resources */,
+				528F52C1189D510800BB3997 /* iPad.storyboard in Resources */,
+				528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,14 +462,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		52306D1D1898A2C1008592DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52306D1E1898A2C1008592DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52306D361898A2C1008592DA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -561,6 +557,7 @@
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -575,6 +572,7 @@
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
