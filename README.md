@@ -1,8 +1,10 @@
 Curator-iOS
 ===========
 
-![image](https://raw2.github.com/chiahsien/Curator-iOS/master/Screenshots/1.png)
-![image](https://raw2.github.com/chiahsien/Curator-iOS/master/Screenshots/2.png)
+![image](https://github.com/chiahsien/Curator-iOS/raw/develop/Screenshots/2.png)
+
+
+![image](https://github.com/chiahsien/Curator-iOS/raw/develop/Screenshots/1.png)
 
 ## [小海嚴選正妹] iOS Client 讓你用最爽快的方式看正妹！ ##
 
