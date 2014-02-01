@@ -8,7 +8,7 @@
 
 #import "CHTLargeImageView.h"
 #import "CHTBeauty.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CHTLargeImageView ()
 @property (nonatomic, strong) UIImageView *imageView;
@@ -64,14 +64,14 @@
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
   __weak typeof(self) weakSelf = self;
 
-  [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:beauty.urlString]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+  [self.imageView setImageWithURL:[NSURL URLWithString:beauty.urlString] placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
     strongSelf.imageView.image = image;
     [strongSelf setNeedsLayout];
-  } failure:nil];
+  }];
 }
 
 @end

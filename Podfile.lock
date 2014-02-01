@@ -30,6 +30,9 @@ PODS:
   - Nimbus/Core (1.0.0)
   - Nimbus/PagingScrollView (1.0.0):
     - Nimbus/Core
+  - SDWebImage (3.5.2):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.2)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - Mantle
   - NHBalancedFlowLayout
   - Nimbus/PagingScrollView
+  - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -48,6 +52,7 @@ SPEC CHECKSUMS:
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   NHBalancedFlowLayout: 3be7c4a41f4dd918445e4823de25bc3cb7a18b4a
   Nimbus: 01c4339214b2f35be2e9284cb6e98beb7fe0f08a
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

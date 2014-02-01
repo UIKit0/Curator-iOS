@@ -8,7 +8,7 @@
 
 #import "CHTBeautyCell.h"
 #import "CHTBeauty.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CHTBeautyCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -26,7 +26,9 @@
   } else {
     self.nameLabel.hidden = YES;
   }
-  [self.imageView setImageWithURL:[NSURL URLWithString:beauty.urlString]];
+  [self.imageView setImageWithURL:[NSURL URLWithString:beauty.urlString]
+                 placeholderImage:nil
+                          options:0];
 }
 
 @end
