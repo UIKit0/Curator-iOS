@@ -7,6 +7,7 @@
 //
 
 #import "CHTStreamViewController.h"
+#import "CHTLargeImageViewController.h"
 #import "CHTHTTPSessionManager.h"
 #import "CHTBeauty.h"
 #import "CHTBeautyCell.h"
@@ -48,6 +49,14 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
   [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
   [self setupCollectionViewLayoutForOrientation:toInterfaceOrientation];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  CHTBeautyCell *cell = (CHTBeautyCell *)sender;
+  NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+  CHTLargeImageViewController *vc = segue.destinationViewController;
+  vc.beauties = self.beauties;
+  vc.selectedIndex = indexPath.item;
 }
 
 #pragma mark - UICollectionViewDataSource

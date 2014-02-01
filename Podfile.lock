@@ -27,6 +27,9 @@ PODS:
     - Mantle/extobjc
   - Mantle/extobjc (1.3.1)
   - NHBalancedFlowLayout (0.2)
+  - Nimbus/Core (1.0.0)
+  - Nimbus/PagingScrollView (1.0.0):
+    - Nimbus/Core
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - Kiwi/XCTest
   - Mantle
   - NHBalancedFlowLayout
+  - Nimbus/PagingScrollView
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -43,6 +47,7 @@ SPEC CHECKSUMS:
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
   NHBalancedFlowLayout: 3be7c4a41f4dd918445e4823de25bc3cb7a18b4a
+  Nimbus: 01c4339214b2f35be2e9284cb6e98beb7fe0f08a
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

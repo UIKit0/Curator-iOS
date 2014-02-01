@@ -7,6 +7,7 @@
 //
 
 #import "CHTGirlOfTheDayDetailViewController.h"
+#import "CHTLargeImageViewController.h"
 #import "CHTHTTPSessionManager.h"
 #import "CHTBeauty.h"
 #import "CHTBeautyCell.h"
@@ -45,6 +46,14 @@
   self.isFetching = NO;
   self.fetchPage = 1;
   [self fetchBeauties];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  CHTBeautyCell *cell = (CHTBeautyCell *)sender;
+  NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+  CHTLargeImageViewController *vc = segue.destinationViewController;
+  vc.beauties = self.beauties;
+  vc.selectedIndex = indexPath.item;
 }
 
 #pragma mark - UICollectionViewDataSource

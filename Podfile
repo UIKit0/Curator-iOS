@@ -10,6 +10,7 @@ pod 'Mantle'
 pod 'SVProgressHUD'
 pod 'NHBalancedFlowLayout'
 pod 'CHTCollectionViewWaterfallLayout'
+pod 'Nimbus/PagingScrollView'
 
 # Testing
 target :CuratorTests, :exclusive => true do

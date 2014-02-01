@@ -155,6 +155,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="Ect-C1-HVy" id="vqu-MX-7Wd"/>
                                     <outlet property="nameLabel" destination="ub8-k1-INy" id="Vp6-oA-FQf"/>
+                                    <segue destination="k7q-nA-uiX" kind="push" identifier="Show Large View" id="l4H-h7-ppI"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -169,6 +170,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRD-l8-4df" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3840" y="1013"/>
+        </scene>
+        <!--Large Image View Controller-->
+        <scene sceneID="taH-dr-CXb">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" hidesBottomBarWhenPushed="YES" id="k7q-nA-uiX" customClass="CHTLargeImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="14r-Jl-8Z5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ojc-Jb-XcY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JYl-Bs-mBe">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-sb-SlG" customClass="NIPagingScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="d3d-sb-SlG" secondAttribute="trailing" id="3qX-J6-fuE"/>
+                            <constraint firstItem="ojc-Jb-XcY" firstAttribute="top" secondItem="d3d-sb-SlG" secondAttribute="bottom" id="G8w-rv-99w"/>
+                            <constraint firstItem="d3d-sb-SlG" firstAttribute="top" secondItem="14r-Jl-8Z5" secondAttribute="bottom" id="lrl-xj-v0J"/>
+                            <constraint firstItem="d3d-sb-SlG" firstAttribute="leading" secondItem="JYl-Bs-mBe" secondAttribute="leading" id="osP-Ch-OYv"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="wz2-ek-NTP"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pagingScrollView" destination="d3d-sb-SlG" id="DqB-Kv-LY5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOi-mc-8Vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5054" y="285"/>
         </scene>
         <!--Stream View Controller - 正妹流-->
         <scene sceneID="K4K-Bw-gBe">
@@ -219,6 +258,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="MJR-02-cmj" id="apC-eD-jB3"/>
                                     <outlet property="nameLabel" destination="jxU-1O-cCv" id="3Td-XK-Sd0"/>
+                                    <segue destination="k7q-nA-uiX" kind="push" identifier="Show Large View" id="tyj-2w-Xfy"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -258,4 +298,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="l4H-h7-ppI"/>
+    </inferredMetricsTieBreakers>
 </document>
