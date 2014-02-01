@@ -12,3 +12,7 @@
 
 extern NSString *const CHTBaseURL;
 extern NSString *const CHTAccessToken;
+
+#pragma mark - Error
+
+extern NSString *const CHTErrorDomain;

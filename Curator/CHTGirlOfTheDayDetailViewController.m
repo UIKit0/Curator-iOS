@@ -95,7 +95,7 @@
   }
 
   self.isFetching = YES;
-  [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+  [SVProgressHUD showWithStatus:@"Loading..."];
 
   __weak typeof(self) weakSelf = self;
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDay:self.beauty.whichDay atPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {

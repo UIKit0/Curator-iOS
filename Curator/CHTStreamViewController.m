@@ -37,13 +37,17 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-  [self setupCollectionViewLayoutForOrientation:orientation];
-
   self.canLoadMore = NO;
   self.isFetching = NO;
   self.fetchPage = 1;
   [self fetchBeauties];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
+  UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+  [self setupCollectionViewLayoutForOrientation:orientation];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -109,7 +113,7 @@
   }
 
   self.isFetching = YES;
-  [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
+  [SVProgressHUD showWithStatus:@"Loading..."];
 
   __weak typeof(self) weakSelf = self;
   [[CHTHTTPSessionManager sharedManager] fetchStreamAtPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {

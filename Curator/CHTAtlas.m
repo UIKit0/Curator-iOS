@@ -12,3 +12,7 @@
 
 NSString *const CHTBaseURL = @"http://curator.im/api/";
 NSString *const CHTAccessToken = @"d02e9521234648bd94e265e5e7c717df";
+
+#pragma mark - Error
+
+NSString *const CHTErrorDomain = @"CHTErrorDomain";

@@ -10,8 +10,6 @@
 #import "CHTAtlas.h"
 #import "CHTBeauty.h"
 
-NSString *const CHTErrorDomain = @"CHTErrorDomain";
-
 @interface CHTHTTPSessionManager (Addons)
 + (NSError *)errorWithResponseObject:(id)responseObject differentFromExpectedClass:(Class)class;
 @end
