@@ -15,6 +15,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CHTGirlOfTheDayOverviewController () <NHBalancedFlowLayoutDelegate>
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *beauties;
 @property (nonatomic, assign) BOOL isFetching;
 @property (nonatomic, assign) NSInteger fetchPage;
@@ -23,6 +24,14 @@
 @implementation CHTGirlOfTheDayOverviewController
 
 #pragma mark - Properties
+
+- (UIRefreshControl *)refreshControl {
+  if (!_refreshControl) {
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+  }
+  return _refreshControl;
+}
 
 - (NSMutableArray *)beauties {
   if (!_beauties) {
@@ -36,6 +45,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  [self.collectionView addSubview:self.refreshControl];
+
   NHBalancedFlowLayout *layout = (NHBalancedFlowLayout *)self.collectionViewLayout;
   CGFloat spacing;
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -47,9 +58,7 @@
   layout.minimumInteritemSpacing = spacing;
   layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
 
-  self.isFetching = NO;
-  self.fetchPage = 1;
-  [self fetchBeauties];
+  [self refresh];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -92,6 +101,12 @@
 
 #pragma mark - Private Methods
 
+- (void)refresh {
+  self.isFetching = NO;
+  self.fetchPage = 1;
+  [self fetchBeauties];
+}
+
 - (void)fetchBeauties {
   if (self.isFetching) {
     return;
@@ -106,7 +121,11 @@
     if (!strongSelf) {
       return;
     }
+    if (strongSelf.fetchPage == 1) {
+      [strongSelf.beauties removeAllObjects];
+    }
     [strongSelf.beauties addObjectsFromArray:beauties];
+    [strongSelf.refreshControl endRefreshing];
     [strongSelf.collectionView reloadData];
     strongSelf.fetchPage++;
     strongSelf.isFetching = NO;
@@ -117,6 +136,7 @@
       return;
     }
     strongSelf.isFetching = NO;
+    [strongSelf.refreshControl endRefreshing];
     [SVProgressHUD dismiss];
     NSLog(@"Error:\n%@", error);
   }];

@@ -15,6 +15,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CHTStreamViewController () <CHTCollectionViewDelegateWaterfallLayout>
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSMutableArray *beauties;
 @property (nonatomic, assign) BOOL canLoadMore;
 @property (nonatomic, assign) BOOL isFetching;
@@ -26,6 +27,14 @@
 CGFloat itemWidth;
 
 #pragma mark - Properties
+
+- (UIRefreshControl *)refreshControl {
+  if (!_refreshControl) {
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+  }
+  return _refreshControl;
+}
 
 - (NSMutableArray *)beauties {
   if (!_beauties) {
@@ -39,10 +48,9 @@ CGFloat itemWidth;
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.canLoadMore = NO;
-  self.isFetching = NO;
-  self.fetchPage = 1;
-  [self fetchBeauties];
+  [self.collectionView addSubview:self.refreshControl];
+
+  [self refresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,6 +117,13 @@ CGFloat itemWidth;
 
 #pragma mark - Private Methods
 
+- (void)refresh {
+  self.canLoadMore = NO;
+  self.isFetching = NO;
+  self.fetchPage = 1;
+  [self fetchBeauties];
+}
+
 - (void)fetchBeauties {
   if (self.isFetching) {
     return;
@@ -124,20 +139,12 @@ CGFloat itemWidth;
       return;
     }
 
-//    if (strongSelf.fetchPage == 1) {
-//      [strongSelf.beauties removeAllObjects];
-      [strongSelf.beauties addObjectsFromArray:beauties];
-      [strongSelf.collectionView reloadData];
-//    } else {
-//      NSMutableArray *indexPaths = [NSMutableArray array];
-//      NSInteger offset = strongSelf.beauties.count;
-//      [strongSelf.beauties addObjectsFromArray:beauties];
-//      for (NSInteger i = offset; i < strongSelf.beauties.count; i++) {
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-//        [indexPaths addObject:indexPath];
-//      }
-//      [strongSelf.collectionView insertItemsAtIndexPaths:indexPaths];
-//    }
+    if (strongSelf.fetchPage == 1) {
+      [strongSelf.beauties removeAllObjects];
+    }
+    [strongSelf.beauties addObjectsFromArray:beauties];
+    [strongSelf.refreshControl endRefreshing];
+    [strongSelf.collectionView reloadData];
     strongSelf.canLoadMore = (beauties.count > 0 && strongSelf.beauties.count < totalCount);
     strongSelf.fetchPage++;
     strongSelf.isFetching = NO;
@@ -148,6 +155,7 @@ CGFloat itemWidth;
       return;
     }
     strongSelf.isFetching = NO;
+    [strongSelf.refreshControl endRefreshing];
     [SVProgressHUD dismiss];
     NSLog(@"Error:\n%@", error);
   }];
