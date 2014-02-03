@@ -64,7 +64,7 @@
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
   __weak typeof(self) weakSelf = self;
 
-  [self.imageView setImageWithURL:[NSURL URLWithString:beauty.urlString] placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;

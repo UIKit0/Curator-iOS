@@ -16,11 +16,15 @@
   return @{
     @"name": @"name",
     @"objectID": @"id",
-    @"urlString": @"image",
+    @"imageURL": @"image",
     @"width": @"width",
     @"height": @"height",
     @"whichDay": @"date"
   };
+}
+
++ (NSValueTransformer *)imageURLJSONTransformer {
+  return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end
