@@ -62,16 +62,7 @@
 #pragma mark - Public Methods
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
-  __weak typeof(self) weakSelf = self;
-
-  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (!strongSelf) {
-      return;
-    }
-    strongSelf.imageView.image = image;
-    [strongSelf setNeedsLayout];
-  }];
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0];
 }
 
 @end

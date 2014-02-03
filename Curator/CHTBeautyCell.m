@@ -26,9 +26,7 @@
   } else {
     self.nameLabel.hidden = YES;
   }
-  [self.imageView setImageWithURL:beauty.imageURL
-                 placeholderImage:nil
-                          options:0];
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0];
 }
 
 @end
