@@ -10,7 +10,7 @@ pod 'Mantle'
 # UI
 pod 'SVProgressHUD'
 pod 'NHBalancedFlowLayout'
-pod 'CHTCollectionViewWaterfallLayout'
+pod 'CHTCollectionViewWaterfallLayout', :git => "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git", :branch => "develop"
 pod 'Nimbus/PagingScrollView'
 
 # Testing

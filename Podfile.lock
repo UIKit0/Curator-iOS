@@ -37,13 +37,18 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - CHTCollectionViewWaterfallLayout
+  - CHTCollectionViewWaterfallLayout (from `https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git`, branch `develop`)
   - Kiwi/XCTest
   - Mantle
   - NHBalancedFlowLayout
   - Nimbus/PagingScrollView
   - SDWebImage
   - SVProgressHUD
+
+EXTERNAL SOURCES:
+  CHTCollectionViewWaterfallLayout:
+    :branch: develop
+    :git: https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd

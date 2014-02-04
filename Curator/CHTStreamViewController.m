@@ -141,10 +141,19 @@ CGFloat itemWidth;
 
     if (strongSelf.fetchPage == 1) {
       [strongSelf.beauties removeAllObjects];
+      [strongSelf.beauties addObjectsFromArray:beauties];
+      [strongSelf.collectionView reloadData];
+    } else {
+      NSMutableArray *indexPaths = [NSMutableArray array];
+      NSInteger offset = strongSelf.beauties.count;
+      [strongSelf.beauties addObjectsFromArray:beauties];
+      for (NSInteger i = offset; i < strongSelf.beauties.count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [indexPaths addObject:indexPath];
+      }
+      [strongSelf.collectionView insertItemsAtIndexPaths:indexPaths];
     }
-    [strongSelf.beauties addObjectsFromArray:beauties];
     [strongSelf.refreshControl endRefreshing];
-    [strongSelf.collectionView reloadData];
     strongSelf.canLoadMore = (beauties.count > 0 && strongSelf.beauties.count < totalCount);
     strongSelf.fetchPage++;
     strongSelf.isFetching = NO;
