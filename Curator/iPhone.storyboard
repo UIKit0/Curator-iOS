@@ -56,14 +56,20 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-Bt-f5P">
+                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="UjP-Dg-XYh" secondAttribute="trailing" id="Ho9-PG-xSm"/>
+                                    <constraint firstItem="OaD-j3-fbb" firstAttribute="centerY" secondItem="jTb-Bt-f5P" secondAttribute="centerY" id="RZQ-k1-Xca"/>
                                     <constraint firstItem="UjP-Dg-XYh" firstAttribute="leading" secondItem="pBp-zq-pjm" secondAttribute="leading" id="XMa-8P-jeD"/>
                                     <constraint firstItem="OaD-j3-fbb" firstAttribute="leading" secondItem="pBp-zq-pjm" secondAttribute="leading" id="Z9c-Ry-IH0"/>
                                     <constraint firstAttribute="trailing" secondItem="OaD-j3-fbb" secondAttribute="trailing" id="hH3-4f-KxS"/>
+                                    <constraint firstItem="OaD-j3-fbb" firstAttribute="centerX" secondItem="jTb-Bt-f5P" secondAttribute="centerX" id="oOs-jj-Wyv"/>
                                     <constraint firstAttribute="bottom" secondItem="UjP-Dg-XYh" secondAttribute="bottom" id="rQz-KH-dEt"/>
                                     <constraint firstAttribute="bottom" secondItem="OaD-j3-fbb" secondAttribute="bottom" id="vno-5p-ORO"/>
                                     <constraint firstItem="OaD-j3-fbb" firstAttribute="top" secondItem="pBp-zq-pjm" secondAttribute="top" id="yT2-g9-VcN"/>
@@ -71,6 +77,7 @@
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="OaD-j3-fbb" id="goR-LD-b1z"/>
+                                    <outlet property="indicator" destination="jTb-Bt-f5P" id="jrV-ol-hML"/>
                                     <outlet property="nameLabel" destination="UjP-Dg-XYh" id="0iu-KS-q0A"/>
                                     <segue destination="fTS-MS-g9I" kind="push" identifier="GirlOfTheDayDetail" id="rt3-vL-SCH"/>
                                 </connections>
@@ -139,6 +146,10 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SUL-8p-LaU">
+                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -146,14 +157,17 @@
                                     <constraint firstItem="ip0-Wb-PSL" firstAttribute="leading" secondItem="ays-ZP-O0F" secondAttribute="leading" id="73c-aC-Te2"/>
                                     <constraint firstAttribute="bottom" secondItem="fgn-Ez-ANV" secondAttribute="bottom" id="Gri-Kx-EPC"/>
                                     <constraint firstItem="fgn-Ez-ANV" firstAttribute="leading" secondItem="ays-ZP-O0F" secondAttribute="leading" id="ICe-Ym-YNt"/>
+                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="centerY" secondItem="SUL-8p-LaU" secondAttribute="centerY" id="JV9-Qw-nZG"/>
                                     <constraint firstAttribute="trailing" secondItem="ip0-Wb-PSL" secondAttribute="trailing" id="MQV-Fr-88t"/>
                                     <constraint firstAttribute="trailing" secondItem="fgn-Ez-ANV" secondAttribute="trailing" id="VB5-Vz-cKQ"/>
                                     <constraint firstItem="ip0-Wb-PSL" firstAttribute="top" secondItem="ays-ZP-O0F" secondAttribute="top" id="ofw-bc-XLc"/>
                                     <constraint firstAttribute="bottom" secondItem="ip0-Wb-PSL" secondAttribute="bottom" id="xRx-J9-XkA"/>
+                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="centerX" secondItem="SUL-8p-LaU" secondAttribute="centerX" id="zBq-NF-Sux"/>
                                 </constraints>
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="ip0-Wb-PSL" id="ivr-fe-eJ6"/>
+                                    <outlet property="indicator" destination="SUL-8p-LaU" id="Veq-dP-mrS"/>
                                     <outlet property="nameLabel" destination="fgn-Ez-ANV" id="1iK-fb-23w"/>
                                     <segue destination="jI5-BZ-pkX" kind="modal" identifier="Show Large View" customClass="CHTShowLargeImageSegue" modalTransitionStyle="crossDissolve" id="ole-zL-2XJ"/>
                                 </connections>
@@ -273,12 +287,18 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RLZ-nP-f1y">
+                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bFy-Nf-TZW" secondAttribute="trailing" id="5j4-GP-QCJ"/>
+                                    <constraint firstItem="RLZ-nP-f1y" firstAttribute="centerX" secondItem="bFy-Nf-TZW" secondAttribute="centerX" id="IyA-5K-kyj"/>
                                     <constraint firstAttribute="bottom" secondItem="0Hh-je-RTG" secondAttribute="bottom" id="NJY-jj-fnP"/>
+                                    <constraint firstItem="RLZ-nP-f1y" firstAttribute="centerY" secondItem="bFy-Nf-TZW" secondAttribute="centerY" id="Ujt-5P-8qj"/>
                                     <constraint firstItem="bFy-Nf-TZW" firstAttribute="top" secondItem="GTv-5t-PRV" secondAttribute="top" id="Wjb-oA-Ub6"/>
                                     <constraint firstItem="bFy-Nf-TZW" firstAttribute="leading" secondItem="GTv-5t-PRV" secondAttribute="leading" id="atK-ef-5hK"/>
                                     <constraint firstAttribute="bottom" secondItem="bFy-Nf-TZW" secondAttribute="bottom" id="cQT-u5-uda"/>
@@ -288,6 +308,7 @@
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="bFy-Nf-TZW" id="atK-Hx-paD"/>
+                                    <outlet property="indicator" destination="RLZ-nP-f1y" id="OvI-Gk-qK1"/>
                                     <outlet property="nameLabel" destination="0Hh-je-RTG" id="U9f-8e-G8a"/>
                                     <segue destination="jI5-BZ-pkX" kind="modal" identifier="Show Large View" customClass="CHTShowLargeImageSegue" modalTransitionStyle="crossDissolve" id="W90-yp-pyg"/>
                                 </connections>

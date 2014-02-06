@@ -12,6 +12,7 @@
 
 @interface CHTLargeImageView ()
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
 @end
 
 @implementation CHTLargeImageView
@@ -26,6 +27,14 @@
     _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   }
   return _imageView;
+}
+
+- (UIActivityIndicatorView *)indicator {
+  if (!_indicator) {
+    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [_indicator startAnimating];
+  }
+  return _indicator;
 }
 
 #pragma mark - NIPageView
@@ -64,15 +73,20 @@
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
   __weak typeof(self) weakSelf = self;
+
+  [self.imageView addSubview:self.indicator];
+  self.indicator.center = CGPointMake(floorf(self.imageView.bounds.size.width/2), floorf(self.imageView.bounds.size.height/2));
+
   [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
-    if (image) {
-      strongSelf.imageView.image = image;
-      [strongSelf setNeedsLayout];
-    }
+//    if (image) {
+//      strongSelf.imageView.image = image;
+//    }
+    [strongSelf.indicator removeFromSuperview];
+    [strongSelf setNeedsLayout];
   }];
 }
 

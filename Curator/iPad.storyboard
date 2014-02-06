@@ -21,7 +21,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY8-2I-1zS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="738"/>
+            <point key="canvasLocation" x="-238" y="134"/>
         </scene>
         <!--Girl Of The Day Overview Controller - 一天一妹-->
         <scene sceneID="yBj-GT-LDq">
@@ -56,6 +56,10 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="A71-Tq-175">
+                                            <rect key="frame" x="141" y="194" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -67,10 +71,13 @@
                                     <constraint firstAttribute="bottom" secondItem="oGe-bn-pxf" secondAttribute="bottom" id="K0E-tW-7k3"/>
                                     <constraint firstAttribute="trailing" secondItem="Xry-vd-ZIv" secondAttribute="trailing" id="LVo-CJ-0eg"/>
                                     <constraint firstItem="oGe-bn-pxf" firstAttribute="leading" secondItem="qIh-2a-GGA" secondAttribute="leading" id="QsF-Dg-BAX"/>
+                                    <constraint firstItem="Xry-vd-ZIv" firstAttribute="centerX" secondItem="A71-Tq-175" secondAttribute="centerX" constant="8.5" id="dyY-cH-IZ1"/>
+                                    <constraint firstItem="Xry-vd-ZIv" firstAttribute="centerY" secondItem="A71-Tq-175" secondAttribute="centerY" constant="8.5" id="tlm-l2-jCS"/>
                                 </constraints>
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="Xry-vd-ZIv" id="fK9-5m-7Qs"/>
+                                    <outlet property="indicator" destination="A71-Tq-175" id="oK2-BJ-5LM"/>
                                     <outlet property="nameLabel" destination="oGe-bn-pxf" id="hKG-Qb-EfE"/>
                                     <segue destination="74Y-Ut-iry" kind="push" identifier="GirlOfTheDayDetail" id="Hud-Lq-p2a"/>
                                 </connections>
@@ -85,7 +92,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnh-Af-0Gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2844" y="1013"/>
+            <point key="canvasLocation" x="1863" y="693"/>
         </scene>
         <!--Navigation Controller - 一天一妹-->
         <scene sceneID="Kv9-bg-l93">
@@ -104,7 +111,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZO0-2j-9bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="1013"/>
+            <point key="canvasLocation" x="873" y="693"/>
         </scene>
         <!--Girl Of The Day Detail View Controller - 一天一妹-->
         <scene sceneID="tqq-23-M01">
@@ -139,6 +146,10 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-2G-Dq0">
+                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -148,12 +159,15 @@
                                     <constraint firstAttribute="trailing" secondItem="Mao-1D-p9B" secondAttribute="trailing" id="FGQ-Zn-HhT"/>
                                     <constraint firstItem="6bl-j4-186" firstAttribute="leading" secondItem="AGi-xZ-9bw" secondAttribute="leading" id="PgF-HT-clz"/>
                                     <constraint firstAttribute="bottom" secondItem="6bl-j4-186" secondAttribute="bottom" id="YnV-5u-2Tw"/>
+                                    <constraint firstItem="lIe-2G-Dq0" firstAttribute="centerX" secondItem="6bl-j4-186" secondAttribute="centerX" id="c2X-np-XUg"/>
+                                    <constraint firstItem="lIe-2G-Dq0" firstAttribute="centerY" secondItem="6bl-j4-186" secondAttribute="centerY" id="fdr-KE-NkE"/>
                                     <constraint firstAttribute="bottom" secondItem="Mao-1D-p9B" secondAttribute="bottom" id="hpt-aI-vl6"/>
                                     <constraint firstAttribute="trailing" secondItem="6bl-j4-186" secondAttribute="trailing" id="tkw-a5-X34"/>
                                 </constraints>
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="6bl-j4-186" id="BAM-Mg-MWB"/>
+                                    <outlet property="indicator" destination="lIe-2G-Dq0" id="Zrm-GZ-Fgn"/>
                                     <outlet property="nameLabel" destination="Mao-1D-p9B" id="KgI-Zx-zRr"/>
                                     <segue destination="KPe-ki-RLM" kind="push" identifier="Show Large View" id="BBu-R6-DJF"/>
                                 </connections>
@@ -169,7 +183,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljU-oE-zWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3840" y="1013"/>
+            <point key="canvasLocation" x="2859" y="693"/>
         </scene>
         <!--Large Image View Controller-->
         <scene sceneID="Uxc-xn-i4e">
@@ -207,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cG-YS-mIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5054" y="285"/>
+            <point key="canvasLocation" x="3893" y="134"/>
         </scene>
         <!--Stream View Controller - 正妹流-->
         <scene sceneID="n6W-fj-AEp">
@@ -242,10 +256,16 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-zs-lAF">
+                                            <rect key="frame" x="141" y="194" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="9Wm-zs-lAF" firstAttribute="centerY" secondItem="AJJ-Ta-Xgf" secondAttribute="centerY" constant="-8.5" id="7rE-ln-Viw"/>
+                                    <constraint firstItem="9Wm-zs-lAF" firstAttribute="centerX" secondItem="AJJ-Ta-Xgf" secondAttribute="centerX" constant="-8.5" id="UA9-51-rJw"/>
                                     <constraint firstAttribute="trailing" secondItem="AJJ-Ta-Xgf" secondAttribute="trailing" id="ZFo-FV-dNM"/>
                                     <constraint firstAttribute="bottom" secondItem="Zdk-Vi-0R5" secondAttribute="bottom" id="f5P-uY-ixa"/>
                                     <constraint firstItem="AJJ-Ta-Xgf" firstAttribute="leading" secondItem="W2O-4i-xYL" secondAttribute="leading" id="fCs-vS-nW0"/>
@@ -257,6 +277,7 @@
                                 <size key="customSize" width="319" height="425"/>
                                 <connections>
                                     <outlet property="imageView" destination="AJJ-Ta-Xgf" id="USb-6O-Rtw"/>
+                                    <outlet property="indicator" destination="9Wm-zs-lAF" id="hQ3-vd-P2d"/>
                                     <outlet property="nameLabel" destination="Zdk-Vi-0R5" id="Cml-xX-Cv7"/>
                                     <segue destination="KPe-ki-RLM" kind="push" identifier="Show Large View" id="Nam-a8-2fc"/>
                                 </connections>
@@ -271,7 +292,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JkQ-rc-lhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="-187"/>
+            <point key="canvasLocation" x="1847" y="-507"/>
         </scene>
         <!--Navigation Controller - 正妹流-->
         <scene sceneID="7zz-Fx-6XE">
@@ -290,7 +311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPl-Oy-eq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-187"/>
+            <point key="canvasLocation" x="873" y="-507"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
