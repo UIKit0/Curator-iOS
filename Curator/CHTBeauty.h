@@ -12,6 +12,9 @@
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, assign, readonly) NSUInteger objectID;
+@property (nonatomic, copy, readonly) NSURL *thumbnailURL;
+@property (nonatomic, assign, readonly) CGFloat thumbnailWidth;
+@property (nonatomic, assign, readonly) CGFloat thumbnailHeight;
 @property (nonatomic, copy, readonly) NSURL *imageURL;
 @property (nonatomic, assign, readonly) CGFloat width;
 @property (nonatomic, assign, readonly) CGFloat height;

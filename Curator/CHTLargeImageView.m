@@ -22,6 +22,7 @@
   if (!_imageView) {
     _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
     _imageView.backgroundColor = [UIColor blackColor];
+    _imageView.clipsToBounds = YES;
     _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   }
   return _imageView;
@@ -51,8 +52,8 @@
 
   CGSize imageSize = self.imageView.image.size;
   CGSize imageViewSize = self.imageView.bounds.size;
-  if (imageSize.width < imageViewSize.width &&
-      imageSize.height < imageViewSize.height) {
+  if (imageSize.width <= imageViewSize.width &&
+      imageSize.height <= imageViewSize.height) {
     self.imageView.contentMode = UIViewContentModeCenter;
   } else {
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -62,7 +63,17 @@
 #pragma mark - Public Methods
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
-  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0];
+  __weak typeof(self) weakSelf = self;
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (!strongSelf) {
+      return;
+    }
+    if (image) {
+      strongSelf.imageView.image = image;
+      [strongSelf setNeedsLayout];
+    }
+  }];
 }
 
 @end

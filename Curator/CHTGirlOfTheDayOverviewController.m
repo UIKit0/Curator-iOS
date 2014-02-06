@@ -96,7 +96,7 @@
   }
 
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  return CGSizeMake(beauty.width, beauty.height);
+  return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
 }
 
 #pragma mark - Private Methods

@@ -97,7 +97,7 @@ CGFloat itemWidth;
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  return beauty.height * itemWidth / beauty.width;
+  return floorf(beauty.thumbnailHeight * itemWidth / beauty.thumbnailWidth);
 }
 
 #pragma mark - UIScrollViewDelegate

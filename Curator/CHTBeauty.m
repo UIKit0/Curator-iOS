@@ -16,6 +16,9 @@
   return @{
     @"name": @"name",
     @"objectID": @"id",
+    @"thumbnailURL": @"thumbnail",
+    @"thumbnailWidth": @"thumbnail_width",
+    @"thumbnailHeight": @"thumbnail_height",
     @"imageURL": @"image",
     @"width": @"width",
     @"height": @"height",
@@ -24,6 +27,10 @@
 }
 
 + (NSValueTransformer *)imageURLJSONTransformer {
+  return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)thumbnailURLJSONTransformer {
   return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
