@@ -19,6 +19,8 @@
 
   [self.refreshControl removeFromSuperview];
   self.title = self.beauty.name;
+    
+  self.delegate = self;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -35,6 +37,12 @@
   [super fetchBeauties];
 
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDay:self.beauty.whichDay atPage:self.fetchPage success:self.fetchSuccessfulBlock failure:self.fetchFailedBlock];
+}
+
+#pragma mark - CHTFetchingBaseViewControllerDelegate
+
+- (BOOL) fetchingBaseViewControllerShouldShowBeautyName:(CHTFetchingBaseViewController *)fetchingBaseViewController {
+    return NO;
 }
 
 @end

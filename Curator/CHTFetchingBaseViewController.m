@@ -110,7 +110,12 @@
   CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                   forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  [cell configureWithBeauty:beauty showName:YES];
+    
+  BOOL showName = YES;
+  if (self.delegate && [self.delegate respondsToSelector:@selector(fetchingBaseViewControllerShouldShowBeautyName:)]) {
+      showName = [self.delegate fetchingBaseViewControllerShouldShowBeautyName:self];
+  }
+  [cell configureWithBeauty:beauty showName:showName];
 
   return cell;
 }

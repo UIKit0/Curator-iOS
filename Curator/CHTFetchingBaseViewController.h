@@ -10,6 +10,8 @@
 #import "CHTBeauty.h"
 #import "CHTBeautyCell.h"
 
+@protocol CHTFetchingBaseViewControllerDelegate;
+
 /**
  *  This is the base collection view controller for fetching beauties.
  *
@@ -40,9 +42,20 @@
 /// Call this block when fail to fetch data
 @property (nonatomic, copy, readonly) void (^fetchFailedBlock)(NSURLSessionDataTask *task, NSError *error);
 
+/// Delegate for customizing behaviours
+@property (nonatomic, weak) id<CHTFetchingBaseViewControllerDelegate> delegate;
+
 /**
  *  Common work before fetching beauties.
  *  Subclasses must call `[super fetchBeauties]` first.
  */
 - (void)fetchBeauties;
 @end
+
+@protocol CHTFetchingBaseViewControllerDelegate <NSObject>
+
+@optional
+- (BOOL) fetchingBaseViewControllerShouldShowBeautyName: (CHTFetchingBaseViewController *) fetchingBaseViewController;
+
+@end
+
