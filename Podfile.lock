@@ -33,7 +33,6 @@ PODS:
   - SDWebImage (3.5.2):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.2)
-  - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -43,7 +42,6 @@ DEPENDENCIES:
   - NHBalancedFlowLayout
   - Nimbus/PagingScrollView
   - SDWebImage
-  - SVProgressHUD
 
 EXTERNAL SOURCES:
   CHTCollectionViewWaterfallLayout:
@@ -58,6 +56,5 @@ SPEC CHECKSUMS:
   NHBalancedFlowLayout: 3be7c4a41f4dd918445e4823de25bc3cb7a18b4a
   Nimbus: 01c4339214b2f35be2e9284cb6e98beb7fe0f08a
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

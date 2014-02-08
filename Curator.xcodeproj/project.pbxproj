@@ -31,6 +31,8 @@
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
 		52A5FC6D1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */; };
+		52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */; };
+		52DBC2C918A608F500923865 /* CHTGirlOfTheDayBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C818A608F500923865 /* CHTGirlOfTheDayBaseViewController.m */; };
 		B43541F45A224273A61A2A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF27B99164BF78EEB51A8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,10 @@
 		52A5FC621898DD8500EFB863 /* CHTBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeauty.h; sourceTree = "<group>"; };
 		52A5FC631898DD8500EFB863 /* CHTBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeauty.m; sourceTree = "<group>"; };
 		52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHTTPSessionManagerSpec.m; sourceTree = "<group>"; };
+		52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFetchingBaseViewController.h; sourceTree = "<group>"; };
+		52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFetchingBaseViewController.m; sourceTree = "<group>"; };
+		52DBC2C718A608F500923865 /* CHTGirlOfTheDayBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTGirlOfTheDayBaseViewController.h; sourceTree = "<group>"; };
+		52DBC2C818A608F500923865 /* CHTGirlOfTheDayBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTGirlOfTheDayBaseViewController.m; sourceTree = "<group>"; };
 		A52BF27B99164BF78EEB51A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91B01763D17441D80AFE642 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E6D368801B51417F9DDB36C5 /* libPods-CuratorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CuratorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,7 @@
 		5205411D1899077700A1D16A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				52DBC2CA18A60E6D00923865 /* Base */,
 				520541251899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.h */,
 				520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */,
 				5205411F189907A700A1D16A /* CHTGirlOfTheDayOverviewController.h */,
@@ -253,6 +260,17 @@
 				52A5FC631898DD8500EFB863 /* CHTBeauty.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		52DBC2CA18A60E6D00923865 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */,
+				52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */,
+				52DBC2C718A608F500923865 /* CHTGirlOfTheDayBaseViewController.h */,
+				52DBC2C818A608F500923865 /* CHTGirlOfTheDayBaseViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +443,8 @@
 				52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */,
 				52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */,
 				5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */,
+				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
+				52DBC2C918A608F500923865 /* CHTGirlOfTheDayBaseViewController.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
 				52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */,
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,

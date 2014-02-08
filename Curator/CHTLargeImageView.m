@@ -76,15 +76,13 @@
 
   [self.imageView addSubview:self.indicator];
   self.indicator.center = CGPointMake(floorf(self.imageView.bounds.size.width/2), floorf(self.imageView.bounds.size.height/2));
+  [self setNeedsLayout];
 
   [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
-//    if (image) {
-//      strongSelf.imageView.image = image;
-//    }
     [strongSelf.indicator removeFromSuperview];
     [strongSelf setNeedsLayout];
   }];
