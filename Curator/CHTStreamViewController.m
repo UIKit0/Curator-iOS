@@ -16,8 +16,6 @@
 
 @implementation CHTStreamViewController
 
-CGFloat itemWidth;
-
 #pragma mark - UIViewController
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,9 +40,9 @@ CGFloat itemWidth;
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  return floorf(beauty.thumbnailHeight * itemWidth / beauty.thumbnailWidth);
+  return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
 }
 
 #pragma mark - Public Methods
@@ -63,13 +61,12 @@ CGFloat itemWidth;
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
     spacing = 15;
-    itemWidth = 236;
   } else {
     spacing = 5;
-    itemWidth = 100;
   }
-  layout.sectionInset = UIEdgeInsetsMake(0, spacing, 0, spacing);
-  layout.itemWidth = itemWidth;
+  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
+  layout.minimumColumnSpacing = spacing;
+  layout.minimumInteritemSpacing = spacing;
 
   if (UIInterfaceOrientationIsPortrait(orientation)) {
     layout.columnCount = 3;
