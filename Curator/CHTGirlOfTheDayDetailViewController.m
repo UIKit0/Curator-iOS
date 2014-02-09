@@ -42,7 +42,7 @@
 #pragma mark - CHTFetchingBaseViewControllerDelegate
 
 - (BOOL) fetchingBaseViewControllerShouldShowBeautyName:(CHTFetchingBaseViewController *)fetchingBaseViewController {
-    return NO;
+  return NO;
 }
 
 @end

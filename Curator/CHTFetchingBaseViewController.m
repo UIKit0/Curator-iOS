@@ -113,7 +113,7 @@
     
   BOOL showName = YES;
   if (self.delegate && [self.delegate respondsToSelector:@selector(fetchingBaseViewControllerShouldShowBeautyName:)]) {
-      showName = [self.delegate fetchingBaseViewControllerShouldShowBeautyName:self];
+    showName = [self.delegate fetchingBaseViewControllerShouldShowBeautyName:self];
   }
   [cell configureWithBeauty:beauty showName:showName];
 
