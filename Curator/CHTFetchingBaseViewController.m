@@ -19,6 +19,36 @@
 
 @implementation CHTFetchingBaseViewController
 
+#pragma mark - Init
+
+- (id) init {
+  self = [super init];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (id) initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+  self = [super initWithCollectionViewLayout:layout];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+  self = [super initWithCoder:aDecoder];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (void) commonInit {
+  _shouldShowCellWithName = YES;
+}
+
 #pragma mark - Properties
 
 - (UIRefreshControl *)refreshControl {
@@ -34,6 +64,13 @@
     _beauties = [NSMutableArray array];
   }
   return _beauties;
+}
+
+- (void) setShouldShowCellWithName:(BOOL)shouldShowCellWithName {
+  if (shouldShowCellWithName != _shouldShowCellWithName) {
+      _shouldShowCellWithName = shouldShowCellWithName;
+      [self.collectionView reloadData];
+  }
 }
 
 #pragma mark - UIViewController
@@ -110,7 +147,8 @@
   CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                   forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  [cell configureWithBeauty:beauty showName:YES];
+    
+  [cell configureWithBeauty:beauty showName:self.shouldShowCellWithName];
 
   return cell;
 }

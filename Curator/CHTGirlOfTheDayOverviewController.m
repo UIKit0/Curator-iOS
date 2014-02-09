@@ -19,6 +19,7 @@
   NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
   CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)segue.destinationViewController;
   vc.beauty = self.beauties[indexPath.item];
+  vc.shouldShowCellWithName = NO;
 }
 
 #pragma mark - Public Methods

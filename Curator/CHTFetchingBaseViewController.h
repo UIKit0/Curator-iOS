@@ -40,6 +40,9 @@
 /// Call this block when fail to fetch data
 @property (nonatomic, copy, readonly) void (^fetchFailedBlock)(NSURLSessionDataTask *task, NSError *error);
 
+/// Determine to show beauty's name or not
+@property (nonatomic, assign) BOOL shouldShowCellWithName;
+
 /**
  *  Common work before fetching beauties.
  *  Subclasses must call `[super fetchBeauties]` first.
