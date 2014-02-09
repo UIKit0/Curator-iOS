@@ -8,6 +8,6 @@
 
 #import "CHTGirlOfTheDayBaseViewController.h"
 
-@interface CHTGirlOfTheDayDetailViewController : CHTGirlOfTheDayBaseViewController <CHTFetchingBaseViewControllerDelegate>
+@interface CHTGirlOfTheDayDetailViewController : CHTGirlOfTheDayBaseViewController
 @property (nonatomic, strong) CHTBeauty *beauty;
 @end

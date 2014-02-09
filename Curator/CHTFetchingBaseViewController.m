@@ -19,6 +19,36 @@
 
 @implementation CHTFetchingBaseViewController
 
+#pragma mark - Init
+
+- (id) init {
+  self = [super init];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (id) initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+  self = [super initWithCollectionViewLayout:layout];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
+  self = [super initWithCoder:aDecoder];
+  if (self) {
+      [self commonInit];
+  }
+  return self;
+}
+
+- (void) commonInit {
+  _shouldShowCellWithName = YES;
+}
+
 #pragma mark - Properties
 
 - (UIRefreshControl *)refreshControl {
@@ -34,6 +64,13 @@
     _beauties = [NSMutableArray array];
   }
   return _beauties;
+}
+
+- (void) setShouldShowCellWithName:(BOOL)shouldShowCellWithName {
+  if (shouldShowCellWithName != _shouldShowCellWithName) {
+      _shouldShowCellWithName = shouldShowCellWithName;
+      [self.collectionView reloadData];
+  }
 }
 
 #pragma mark - UIViewController
@@ -111,11 +148,7 @@
                                                                   forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
     
-  BOOL showName = YES;
-  if (self.delegate && [self.delegate respondsToSelector:@selector(fetchingBaseViewControllerShouldShowBeautyName:)]) {
-    showName = [self.delegate fetchingBaseViewControllerShouldShowBeautyName:self];
-  }
-  [cell configureWithBeauty:beauty showName:showName];
+  [cell configureWithBeauty:beauty showName:self.shouldShowCellWithName];
 
   return cell;
 }
