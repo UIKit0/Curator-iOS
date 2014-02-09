@@ -21,31 +21,35 @@
 
 #pragma mark - Init
 
-- (id) init {
-  self = [super init];
-  if (self) {
-      [self commonInit];
+- (id)init {
+  if (self = [super init]) {
+    [self commonInit];
   }
   return self;
 }
 
-- (id) initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
-  self = [super initWithCollectionViewLayout:layout];
-  if (self) {
-      [self commonInit];
+- (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
+  if (self = [super initWithCollectionViewLayout:layout]) {
+    [self commonInit];
   }
   return self;
 }
 
-- (id) initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-      [self commonInit];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  if (self = [super initWithCoder:aDecoder]) {
+    [self commonInit];
   }
   return self;
 }
 
-- (void) commonInit {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    [self commonInit];
+  }
+  return self;
+}
+
+- (void)commonInit {
   _shouldShowCellWithName = YES;
 }
 
@@ -66,10 +70,10 @@
   return _beauties;
 }
 
-- (void) setShouldShowCellWithName:(BOOL)shouldShowCellWithName {
+- (void)setShouldShowCellWithName:(BOOL)shouldShowCellWithName {
   if (shouldShowCellWithName != _shouldShowCellWithName) {
-      _shouldShowCellWithName = shouldShowCellWithName;
-      [self.collectionView reloadData];
+    _shouldShowCellWithName = shouldShowCellWithName;
+    [self.collectionView reloadData];
   }
 }
 
@@ -147,7 +151,7 @@
   CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                   forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
-    
+
   [cell configureWithBeauty:beauty showName:self.shouldShowCellWithName];
 
   return cell;
