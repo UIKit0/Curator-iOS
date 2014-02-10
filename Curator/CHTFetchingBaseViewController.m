@@ -19,40 +19,6 @@
 
 @implementation CHTFetchingBaseViewController
 
-#pragma mark - Init
-
-- (id)init {
-  if (self = [super init]) {
-    [self commonInit];
-  }
-  return self;
-}
-
-- (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
-  if (self = [super initWithCollectionViewLayout:layout]) {
-    [self commonInit];
-  }
-  return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-  if (self = [super initWithCoder:aDecoder]) {
-    [self commonInit];
-  }
-  return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    [self commonInit];
-  }
-  return self;
-}
-
-- (void)commonInit {
-  _shouldShowCellWithName = YES;
-}
-
 #pragma mark - Properties
 
 - (UIRefreshControl *)refreshControl {
@@ -68,13 +34,6 @@
     _beauties = [NSMutableArray array];
   }
   return _beauties;
-}
-
-- (void)setShouldShowCellWithName:(BOOL)shouldShowCellWithName {
-  if (shouldShowCellWithName != _shouldShowCellWithName) {
-    _shouldShowCellWithName = shouldShowCellWithName;
-    [self.collectionView reloadData];
-  }
 }
 
 #pragma mark - UIViewController
@@ -123,6 +82,7 @@
     NSLog(@"Error:\n%@", error);
   };
 
+  self.shouldShowCellWithName = YES;
   [self.collectionView addSubview:self.refreshControl];
   [self refresh];
 }

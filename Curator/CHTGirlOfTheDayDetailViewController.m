@@ -19,6 +19,7 @@
 
   [self.refreshControl removeFromSuperview];
   self.title = self.beauty.name;
+  self.shouldShowCellWithName = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
