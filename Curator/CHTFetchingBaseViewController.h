@@ -32,7 +32,10 @@
 @property (nonatomic, strong, readonly) NSMutableArray *beauties;
 
 /// Current fetch page
-@property (nonatomic, assign) NSInteger fetchPage;
+@property (nonatomic, assign, readonly) NSInteger fetchPage;
+
+/// Can load more data or not
+@property (nonatomic, assign, readonly) BOOL canLoadMore;
 
 /// Call this block when succeed to fetch data
 @property (nonatomic, copy, readonly) void (^fetchSuccessfulBlock)(NSArray *beauties, NSInteger totalCount, id responseObject);

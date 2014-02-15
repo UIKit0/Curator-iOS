@@ -25,6 +25,7 @@
 		52306D2F1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D301898A2C1008592DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0F1898A2C1008592DA /* UIKit.framework */; };
 		52306D381898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D361898A2C1008592DA /* InfoPlist.strings */; };
+		525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */; };
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
 		52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */; };
@@ -74,6 +75,8 @@
 		52306D2D1898A2C1008592DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52306D351898A2C1008592DA /* CuratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuratorTests-Info.plist"; sourceTree = "<group>"; };
 		52306D371898A2C1008592DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLoadMoreView.h; sourceTree = "<group>"; };
+		525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLoadMoreView.m; sourceTree = "<group>"; };
 		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		528F52C0189D510800BB3997 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		52A5FC5A1898AE8400EFB863 /* CHTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTAtlas.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
 				52274C40189C02FA00347629 /* CHTLargeImageView.h */,
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
+				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
+				525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,
 				52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */,
 				52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */,
+				525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */,
 				5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */,
 				52306D181898A2C1008592DA /* main.m in Sources */,
 			);

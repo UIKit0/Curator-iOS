@@ -13,7 +13,8 @@
 @property (nonatomic, strong, readwrite) NSMutableArray *beauties;
 @property (nonatomic, copy, readwrite) void (^fetchSuccessfulBlock)(NSArray *beauties, NSInteger totalCount, id responseObject);
 @property (nonatomic, copy, readwrite) void (^fetchFailedBlock)(NSURLSessionDataTask *task, NSError *error);
-@property (nonatomic, assign) BOOL canLoadMore;
+@property (nonatomic, assign, readwrite) NSInteger fetchPage;
+@property (nonatomic, assign, readwrite) BOOL canLoadMore;
 @property (nonatomic, assign) BOOL isFetching;
 @end
 
@@ -135,7 +136,7 @@
 #pragma mark - Private Methods
 
 - (void)refresh {
-  self.canLoadMore = NO;
+  self.canLoadMore = YES;
   self.isFetching = NO;
   self.fetchPage = 1;
   [self fetchBeauties];
