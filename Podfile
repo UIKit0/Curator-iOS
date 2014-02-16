@@ -8,7 +8,7 @@ pod 'SDWebImage'
 pod 'Mantle'
 
 # UI
-pod 'NHBalancedFlowLayout'
+pod 'NHBalancedFlowLayout', :head
 pod 'CHTCollectionViewWaterfallLayout', :git => "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git", :branch => "develop"
 pod 'Nimbus/PagingScrollView'
 

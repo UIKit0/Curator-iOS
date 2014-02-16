@@ -32,10 +32,8 @@ static NSString *footerIdentifier = @"footerIdentifier";
   layout.minimumLineSpacing = spacing;
   layout.minimumInteritemSpacing = spacing;
   layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
-  layout.headerReferenceSize = CGSizeZero;
   layout.footerReferenceSize = CGSizeMake(40, 40);
 
-  [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:footerIdentifier];
   [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier];
 }
 
@@ -55,11 +53,7 @@ static NSString *footerIdentifier = @"footerIdentifier";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
   CHTLoadMoreView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIdentifier forIndexPath:indexPath];
 
-  if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-    view.hidden = YES;
-  } else {
-    view.state = (self.canLoadMore) ? CHTLoadMoreStateLoading : CHTLoadMoreStateEnded;
-  }
+  view.state = (self.canLoadMore) ? CHTLoadMoreStateLoading : CHTLoadMoreStateEnded;
 
   return view;
 }

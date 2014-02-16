@@ -26,7 +26,7 @@ PODS:
   - Mantle (1.3.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.3.1)
-  - NHBalancedFlowLayout (0.2)
+  - NHBalancedFlowLayout (HEAD based on 0.2)
   - Nimbus/Core (1.0.0)
   - Nimbus/PagingScrollView (1.0.0):
     - Nimbus/Core
@@ -39,7 +39,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout (from `https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git`, branch `develop`)
   - Kiwi/XCTest
   - Mantle
-  - NHBalancedFlowLayout
+  - NHBalancedFlowLayout (HEAD)
   - Nimbus/PagingScrollView
   - SDWebImage
 
