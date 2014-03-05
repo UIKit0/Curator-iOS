@@ -18,7 +18,15 @@
 
 @implementation CHTBeautyCell
 
-#pragma - Public Methods
+#pragma mark - UICollectionViewCell
+
+- (void)prepareForReuse {
+  [super prepareForReuse];
+
+  [self.imageView cancelCurrentImageLoad];
+}
+
+#pragma mark - Public Methods
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty showName:(BOOL)showName {
   if (showName) {
