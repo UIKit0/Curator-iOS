@@ -10,12 +10,10 @@
 #import "CHTLargeImageView.h"
 #import "CHTBeauty.h"
 #import <Nimbus/NIPagingScrollView.h>
-#import <Nimbus/NIPagingScrollViewDelegate.h>
-#import <Nimbus/NIPagingScrollViewDataSource.h>
 
 @interface CHTLargeImageViewController () <
-NIPagingScrollViewDelegate,
-NIPagingScrollViewDataSource
+  NIPagingScrollViewDelegate,
+  NIPagingScrollViewDataSource
 >
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet NIPagingScrollView *pagingScrollView;

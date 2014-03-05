@@ -37,7 +37,7 @@
   return _indicator;
 }
 
-#pragma mark - NIPageView
+#pragma mark - NIPagingScrollViewPage
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
@@ -47,6 +47,7 @@
 }
 
 - (void)prepareForReuse {
+  [self.imageView cancelCurrentImageLoad];
   self.imageView.image = nil;
 }
 
@@ -75,7 +76,7 @@
   __weak typeof(self) weakSelf = self;
 
   [self.imageView addSubview:self.indicator];
-  self.indicator.center = CGPointMake(floorf(self.imageView.bounds.size.width/2), floorf(self.imageView.bounds.size.height/2));
+  self.indicator.center = CGPointMake(CGRectGetMidX(self.imageView.bounds), CGRectGetMidY(self.imageView.bounds));
   [self setNeedsLayout];
 
   [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {

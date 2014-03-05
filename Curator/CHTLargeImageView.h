@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 Nelson. All rights reserved.
 //
 
-#import "NIPageView.h"
+#import "NIPagingScrollViewPage.h"
 
 @class CHTBeauty;
 
-@interface CHTLargeImageView : NIPageView
+@interface CHTLargeImageView : NIPagingScrollViewPage
 - (void)configureWithBeauty:(CHTBeauty *)beauty;
 @end
