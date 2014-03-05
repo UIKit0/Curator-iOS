@@ -14,15 +14,15 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   return @{
-    @"name": @"name",
-    @"objectID": @"id",
-    @"thumbnailURL": @"thumbnail",
-    @"thumbnailWidth": @"thumbnail_width",
-    @"thumbnailHeight": @"thumbnail_height",
-    @"imageURL": @"image",
-    @"width": @"width",
-    @"height": @"height",
-    @"whichDay": @"date"
+    @"name" : @"name",
+    @"objectID" : @"id",
+    @"thumbnailURL" : @"thumbnail",
+    @"thumbnailWidth" : @"thumbnail_width",
+    @"thumbnailHeight" : @"thumbnail_height",
+    @"imageURL" : @"image",
+    @"width" : @"width",
+    @"height" : @"height",
+    @"whichDay" : @"date"
   };
 }
 

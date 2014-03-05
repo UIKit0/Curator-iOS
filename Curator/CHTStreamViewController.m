@@ -80,18 +80,18 @@ static NSString *footerIdentifier = @"footerIdentifier";
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
     spacing = 15;
+    if (UIInterfaceOrientationIsPortrait(orientation)) {
+      layout.columnCount = 3;
+    } else {
+      layout.columnCount = 4;
+    }
   } else {
     spacing = 5;
+    layout.columnCount = 2;
   }
   layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
   layout.minimumColumnSpacing = spacing;
   layout.minimumInteritemSpacing = spacing;
-
-  if (UIInterfaceOrientationIsPortrait(orientation)) {
-    layout.columnCount = 3;
-  } else {
-    layout.columnCount = 4;
-  }
 }
 
 @end
