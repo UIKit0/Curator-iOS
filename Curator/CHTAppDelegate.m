@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Limit maximum image cache size, in bytes.
-  [SDImageCache sharedImageCache].maxCacheSize = 128 * 1024 * 1024;
+  [SDImageCache sharedImageCache].maxCacheSize = 256 * 1024 * 1024;
   [[SDImageCache sharedImageCache] cleanDisk];
 
   // Enable network activity indicator
