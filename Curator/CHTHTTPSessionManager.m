@@ -31,10 +31,9 @@
                   success:(void (^)(NSArray *beauties, NSInteger totalCount, id responseObject))successBlock
                   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failureBlock {
   NSString *path = @"stream";
-  NSDictionary *parameters =
-  @{
-    @"page": @(page),
-    @"token": CHTAccessToken
+  NSDictionary *parameters = @{
+    @"page" : @(page),
+    @"token" : CHTAccessToken
   };
   [self fetchPath:path parameters:parameters success:successBlock failure:failureBlock];
 }
@@ -43,9 +42,9 @@
                                 success:(void (^)(NSArray *beauties, NSInteger totalCount, id responseObject))successBlock
                                 failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failureBlock {
   NSString *path = @"girl_of_the_day";
-  NSDictionary *parameters =
-  @{
-    @"token": CHTAccessToken
+  NSDictionary *parameters = @{
+    @"page" : @(page),
+    @"token" : CHTAccessToken
   };
   [self fetchPath:path parameters:parameters success:successBlock failure:failureBlock];
 }
@@ -55,9 +54,8 @@
                   success:(void (^)(NSArray *beauties, NSInteger totalCount, id responseObject))successBlock
                   failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failureBlock {
   NSString *path = [NSString stringWithFormat:@"girl_of_the_day/%@", date];
-  NSDictionary *parameters =
-  @{
-    @"token": CHTAccessToken
+  NSDictionary *parameters = @{
+    @"token" : CHTAccessToken
   };
 
   [self GET:path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -113,7 +111,7 @@
 
 + (NSError *)errorWithResponseObject:(id)responseObject differentFromExpectedClass:(Class)class {
   NSDictionary *userInfo = @{
-    NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Expected %@, got %@", class, [responseObject class]]
+    NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Expected %@, got %@", class, [responseObject class]]
   };
   NSError *error = [NSError errorWithDomain:CHTErrorDomain code:NSURLErrorCannotParseResponse userInfo:userInfo];
   return error;
