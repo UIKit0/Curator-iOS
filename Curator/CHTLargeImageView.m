@@ -32,7 +32,8 @@
 - (UIActivityIndicatorView *)indicator {
   if (!_indicator) {
     _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [_indicator startAnimating];
+    _indicator.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _indicator.center = CGPointMake(CGRectGetMidX(self.imageView.bounds), CGRectGetMidY(self.imageView.bounds));
   }
   return _indicator;
 }
@@ -42,6 +43,7 @@
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
   if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
     [self addSubview:self.imageView];
+    [self.imageView addSubview:self.indicator];
   }
   return self;
 }
@@ -49,6 +51,7 @@
 - (void)prepareForReuse {
   [self.imageView cancelCurrentImageLoad];
   self.imageView.image = nil;
+  [self.indicator stopAnimating];
 }
 
 #pragma mark - UIView
@@ -73,18 +76,17 @@
 #pragma mark - Public Methods
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
-  __weak typeof(self) weakSelf = self;
-
-  [self.imageView addSubview:self.indicator];
-  self.indicator.center = CGPointMake(CGRectGetMidX(self.imageView.bounds), CGRectGetMidY(self.imageView.bounds));
+  [self.indicator startAnimating];
   [self setNeedsLayout];
+
+  __weak typeof(self) weakSelf = self;
 
   [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
-    [strongSelf.indicator removeFromSuperview];
+    [strongSelf.indicator stopAnimating];
     [strongSelf setNeedsLayout];
   }];
 }
