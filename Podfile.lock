@@ -18,7 +18,7 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CHTCollectionViewWaterfallLayout (0.6)
+  - CHTCollectionViewWaterfallLayout (HEAD based on 0.6)
   - Kiwi/ARC (2.2.3)
   - Kiwi/NonARC (2.2.3)
   - Kiwi/XCTest (2.2.3):
@@ -37,7 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - CHTCollectionViewWaterfallLayout
+  - CHTCollectionViewWaterfallLayout (HEAD)
   - Kiwi/XCTest
   - Mantle
   - NHBalancedFlowLayout (HEAD)

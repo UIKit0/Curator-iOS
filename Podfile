@@ -9,7 +9,7 @@ pod 'Mantle'
 
 # UI
 pod 'NHBalancedFlowLayout', :head
-pod 'CHTCollectionViewWaterfallLayout'
+pod 'CHTCollectionViewWaterfallLayout', :head
 pod 'Nimbus/PagingScrollView'
 
 # Testing
