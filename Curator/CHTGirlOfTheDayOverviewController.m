@@ -14,6 +14,16 @@
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navigation-title"]];
+  self.navigationItem.titleView = titleView;
+
+  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+  self.navigationItem.backBarButtonItem = backItem;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   CHTBeautyCell *cell = (CHTBeautyCell *)sender;
   NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];

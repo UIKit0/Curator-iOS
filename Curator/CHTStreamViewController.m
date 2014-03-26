@@ -27,6 +27,9 @@ static NSString *footerIdentifier = @"footerIdentifier";
   [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier];
   CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
   layout.footerHeight = 40;
+
+  UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navigation-title"]];
+  self.navigationItem.titleView = titleView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

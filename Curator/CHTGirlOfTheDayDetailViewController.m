@@ -9,6 +9,8 @@
 #import "CHTGirlOfTheDayDetailViewController.h"
 #import "CHTLargeImageViewController.h"
 #import "CHTHTTPSessionManager.h"
+#import "CHTNavigatonBarTitleView.h"
+#import "NSString+Date.h"
 
 @implementation CHTGirlOfTheDayDetailViewController
 
@@ -18,7 +20,11 @@
   [super viewDidLoad];
 
   [self.refreshControl removeFromSuperview];
-  self.title = self.beauty.name;
+
+  CHTNavigatonBarTitleView *titleView = [[CHTNavigatonBarTitleView alloc] initWithFrame:CGRectMake(0, 0, 160, 44)];
+  [titleView setTitle:self.beauty.name subtitle:[NSString dateStringFromString:self.beauty.whichDay]];
+  self.navigationItem.titleView = titleView;
+
   self.shouldShowCellWithName = NO;
 }
 

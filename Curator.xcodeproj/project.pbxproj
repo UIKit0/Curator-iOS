@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35DEBE223AAC4540842FA66D /* libPods-CuratorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D368801B51417F9DDB36C5 /* libPods-CuratorTests.a */; };
+		52038E4518E31E2000642001 /* CHTNavigatonBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */; };
 		52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */; };
 		5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205412318993CF200A1D16A /* CHTBeautyCell.m */; };
 		520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */; };
@@ -28,6 +29,7 @@
 		525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */; };
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
+		529DDF8C18E32BEC00DE5DE4 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */; };
 		52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */; };
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52038E4318E31E2000642001 /* CHTNavigatonBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTNavigatonBarTitleView.h; sourceTree = "<group>"; };
+		52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTNavigatonBarTitleView.m; sourceTree = "<group>"; };
 		5205411F189907A700A1D16A /* CHTGirlOfTheDayOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTGirlOfTheDayOverviewController.h; sourceTree = "<group>"; };
 		52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTGirlOfTheDayOverviewController.m; sourceTree = "<group>"; };
 		5205412218993CF200A1D16A /* CHTBeautyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeautyCell.h; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLoadMoreView.m; sourceTree = "<group>"; };
 		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		528F52C0189D510800BB3997 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		52A5FC5A1898AE8400EFB863 /* CHTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTAtlas.h; sourceTree = "<group>"; };
 		52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTAtlas.m; sourceTree = "<group>"; };
 		52A5FC5E1898B32600EFB863 /* CHTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
 				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
 				525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */,
+				52038E4318E31E2000642001 /* CHTNavigatonBarTitleView.h */,
+				52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				52A5FC591898AE3A00EFB863 /* Basic */,
+				529DDF8918E32B7900DE5DE4 /* Category */,
 				52A5FC611898DD5F00EFB863 /* Model */,
 				52A5FC5D1898B11400EFB863 /* Network */,
 				52306D121898A2C1008592DA /* Supporting Files */,
@@ -226,6 +235,15 @@
 				52306D361898A2C1008592DA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		529DDF8918E32B7900DE5DE4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */,
+				529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		52A5FC581898A9E400EFB863 /* UI */ = {
@@ -456,8 +474,10 @@
 				52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */,
 				52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */,
 				525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */,
+				52038E4518E31E2000642001 /* CHTNavigatonBarTitleView.m in Sources */,
 				5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */,
 				52306D181898A2C1008592DA /* main.m in Sources */,
+				529DDF8C18E32BEC00DE5DE4 /* NSString+Date.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

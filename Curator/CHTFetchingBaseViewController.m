@@ -42,6 +42,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  self.navigationController.navigationBar.tintColor = [UIColor redColor];
+  self.tabBarController.tabBar.tintColor = [UIColor redColor];
+
   __weak typeof(self) weakSelf = self;
 
   self.fetchSuccessfulBlock = ^(NSArray *beauties, NSInteger totalCount, id responseObject) {
