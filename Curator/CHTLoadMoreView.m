@@ -20,6 +20,7 @@
 - (UIActivityIndicatorView *)activityIndicatorView {
   if (!_activityIndicatorView) {
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityIndicatorView.color = [UIColor whiteColor];
     _activityIndicatorView.hidesWhenStopped = YES;
     [_activityIndicatorView startAnimating];
   }

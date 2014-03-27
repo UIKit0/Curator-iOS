@@ -44,6 +44,7 @@
 
   self.navigationController.navigationBar.tintColor = [UIColor redColor];
   self.tabBarController.tabBar.tintColor = [UIColor redColor];
+  self.collectionView.backgroundColor = [UIColor blackColor];
 
   __weak typeof(self) weakSelf = self;
 
