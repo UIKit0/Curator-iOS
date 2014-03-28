@@ -30,6 +30,7 @@
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
 		529DDF8C18E32BEC00DE5DE4 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */; };
+		529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */; };
 		52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */; };
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
@@ -85,6 +86,8 @@
 		528F52C0189D510800BB3997 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeautyOfTheDayCell.h; sourceTree = "<group>"; };
+		529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeautyOfTheDayCell.m; sourceTree = "<group>"; };
 		52A5FC5A1898AE8400EFB863 /* CHTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTAtlas.h; sourceTree = "<group>"; };
 		52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTAtlas.m; sourceTree = "<group>"; };
 		52A5FC5E1898B32600EFB863 /* CHTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 			children = (
 				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
 				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
+				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
 				52274C40189C02FA00347629 /* CHTLargeImageView.h */,
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
 				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
@@ -466,6 +471,7 @@
 				52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */,
 				52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */,
 				5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */,
+				529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */,
 				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
 				52DBC2C918A608F500923865 /* CHTGirlOfTheDayBaseViewController.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
