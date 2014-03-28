@@ -51,4 +51,12 @@
  *  Subclasses must call `[super fetchBeauties]` first.
  */
 - (void)fetchBeauties;
+
+/**
+ *  Setup collection view section footer view's kind
+ *
+ *  @param kind Collection element kind, e.x., UICollectionElementKindSectionFooter
+ */
+- (void)registerCollectionSectionFooterViewForSupplementaryViewOfKind:(NSString *)kind;
+
 @end

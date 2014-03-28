@@ -8,11 +8,8 @@
 
 #import "CHTStreamViewController.h"
 #import "CHTLargeImageViewController.h"
-#import "CHTLoadMoreView.h"
 #import "CHTHTTPSessionManager.h"
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
-
-static NSString *footerIdentifier = @"footerIdentifier";
 
 @interface CHTStreamViewController () <CHTCollectionViewDelegateWaterfallLayout>
 @end
@@ -24,12 +21,13 @@ static NSString *footerIdentifier = @"footerIdentifier";
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier];
   CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
   layout.footerHeight = 40;
 
   UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navigation-title"]];
   self.navigationItem.titleView = titleView;
+
+  [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,14 +55,6 @@ static NSString *footerIdentifier = @"footerIdentifier";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
   return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
-}
-
-#pragma mark - UICollectionViewDataSource
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-  CHTLoadMoreView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIdentifier forIndexPath:indexPath];
-  view.state = (self.canLoadMore) ? CHTLoadMoreStateLoading : CHTLoadMoreStateEnded;
-  return view;
 }
 
 #pragma mark - Public Methods

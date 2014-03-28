@@ -7,10 +7,7 @@
 //
 
 #import "CHTGirlOfTheDayBaseViewController.h"
-#import "CHTLoadMoreView.h"
 #import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
-
-static NSString *footerIdentifier = @"footerIdentifier";
 
 @interface CHTGirlOfTheDayBaseViewController () <NHBalancedFlowLayoutDelegate>
 @end
@@ -34,7 +31,7 @@ static NSString *footerIdentifier = @"footerIdentifier";
   layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
   layout.footerReferenceSize = CGSizeMake(40, 40);
 
-  [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerIdentifier];
+  [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:UICollectionElementKindSectionFooter];
 }
 
 #pragma mark - NHBalancedFlowLayoutDelegate
@@ -46,16 +43,6 @@ static NSString *footerIdentifier = @"footerIdentifier";
 
   CHTBeauty *beauty = self.beauties[indexPath.item];
   return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
-}
-
-#pragma mark - UICollectionViewDataSource
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-  CHTLoadMoreView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIdentifier forIndexPath:indexPath];
-
-  view.state = (self.canLoadMore) ? CHTLoadMoreStateLoading : CHTLoadMoreStateEnded;
-
-  return view;
 }
 
 @end

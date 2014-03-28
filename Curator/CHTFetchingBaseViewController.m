@@ -7,6 +7,9 @@
 //
 
 #import "CHTFetchingBaseViewController.h"
+#import "CHTLoadMoreView.h"
+
+static NSString *footerIdentifier = @"footerIdentifier";
 
 @interface CHTFetchingBaseViewController ()
 @property (nonatomic, strong, readwrite) UIRefreshControl *refreshControl;
@@ -44,7 +47,7 @@
 
   self.navigationController.navigationBar.tintColor = [UIColor redColor];
   self.tabBarController.tabBar.tintColor = [UIColor redColor];
-  self.collectionView.backgroundColor = [UIColor blackColor];
+  self.collectionView.backgroundColor = [UIColor colorWithRed:0.117 green:0.112 blue:0.106 alpha:1.000];
 
   __weak typeof(self) weakSelf = self;
 
@@ -101,6 +104,10 @@
   self.isFetching = YES;
 }
 
+- (void)registerCollectionSectionFooterViewForSupplementaryViewOfKind:(NSString *)kind {
+  [self.collectionView registerClass:[CHTLoadMoreView class] forSupplementaryViewOfKind:kind withReuseIdentifier:footerIdentifier];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -113,13 +120,20 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *identifier = @"BeautyCell";
-  CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
-                                                                  forIndexPath:indexPath];
+  CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
 
   [cell configureWithBeauty:beauty showName:self.shouldShowCellWithName];
 
   return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+  CHTLoadMoreView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerIdentifier forIndexPath:indexPath];
+
+  view.state = (self.canLoadMore) ? CHTLoadMoreStateLoading : CHTLoadMoreStateEnded;
+
+  return view;
 }
 
 #pragma mark - UIScrollViewDelegate

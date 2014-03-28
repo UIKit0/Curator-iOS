@@ -33,7 +33,7 @@
     _textLabel.hidden = YES;
     _textLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _textLabel.textAlignment = NSTextAlignmentCenter;
-    _textLabel.textColor = [UIColor colorWithRed:115.0 / 255.0 green:111.0 / 255.0 blue:108.0 / 255.0 alpha:0.3];
+    _textLabel.textColor = [UIColor whiteColor];
     _textLabel.font = [UIFont boldSystemFontOfSize:17];
     _textLabel.text = @"- 小海嚴選 -";
     [_textLabel sizeToFit];
