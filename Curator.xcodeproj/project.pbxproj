@@ -147,10 +147,7 @@
 		5205411E1899078900A1D16A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
-				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
-				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
-				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
+				529DDF9018E6656A00DE5DE4 /* Collection View Cells */,
 				52274C40189C02FA00347629 /* CHTLargeImageView.h */,
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
 				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
@@ -246,6 +243,17 @@
 				529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		529DDF9018E6656A00DE5DE4 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
+				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
+				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
+			);
+			name = "Collection View Cells";
 			sourceTree = "<group>";
 		};
 		52A5FC581898A9E400EFB863 /* UI */ = {
