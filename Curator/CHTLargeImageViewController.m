@@ -104,10 +104,8 @@
   self.title = beauty.name;
 
   if (self.mode == CHTLargeImageViewDisplayModeNmae) {
-    self.infoLabel.textAlignment = NSTextAlignmentCenter;
     self.infoLabel.text = beauty.name;
   } else {
-    self.infoLabel.textAlignment = NSTextAlignmentRight;
     self.infoLabel.text = [NSString stringWithFormat:@"%ld/%lu", (long)(self.pagingScrollView.centerPageIndex + 1), (unsigned long)[self.beauties count]];
   }
 }

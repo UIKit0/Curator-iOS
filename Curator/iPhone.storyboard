@@ -235,7 +235,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3a-Sd-New" userLabel="Info Label">
-                                <rect key="frame" x="10" y="528" width="300" height="40"/>
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -248,9 +248,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o3a-Sd-New" firstAttribute="leading" secondItem="Q8e-rn-p8Z" secondAttribute="leading" constant="10" id="LAv-sg-flU"/>
+                            <constraint firstItem="o3a-Sd-New" firstAttribute="leading" secondItem="Q8e-rn-p8Z" secondAttribute="leading" id="LAv-sg-flU"/>
                             <constraint firstAttribute="bottom" secondItem="o3a-Sd-New" secondAttribute="bottom" id="QGK-Bj-Khw"/>
-                            <constraint firstAttribute="trailing" secondItem="o3a-Sd-New" secondAttribute="trailing" constant="10" id="VIq-ad-ySf"/>
+                            <constraint firstAttribute="trailing" secondItem="o3a-Sd-New" secondAttribute="trailing" id="VIq-ad-ySf"/>
                             <constraint firstItem="7W7-AT-0jL" firstAttribute="top" secondItem="rTr-kf-HUe" secondAttribute="bottom" id="daX-g0-Mpg"/>
                             <constraint firstItem="STy-aP-VBl" firstAttribute="top" secondItem="7W7-AT-0jL" secondAttribute="bottom" id="hrt-CO-KAy"/>
                             <constraint firstItem="7W7-AT-0jL" firstAttribute="leading" secondItem="Q8e-rn-p8Z" secondAttribute="leading" id="qEl-Bb-K9a"/>
