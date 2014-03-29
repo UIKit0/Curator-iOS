@@ -46,6 +46,7 @@
   CHTBeautyCell *cell = (CHTBeautyCell *)sender;
   NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
   CHTLargeImageViewController *vc = segue.destinationViewController;
+  vc.mode = CHTLargeImageViewDisplayModeNmae;
   vc.beauties = self.beauties;
   vc.selectedIndex = indexPath.item;
 }

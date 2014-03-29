@@ -15,7 +15,7 @@
   NIPagingScrollViewDelegate,
   NIPagingScrollViewDataSource
 >
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet NIPagingScrollView *pagingScrollView;
 @end
 
@@ -30,10 +30,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
-  CHTBeauty *beauty = self.beauties[self.selectedIndex];
-  self.title = beauty.name;
-  self.nameLabel.text = beauty.name;
 
   self.pagingScrollView.delegate = self;
   self.pagingScrollView.dataSource = self;
@@ -88,9 +84,7 @@
 #pragma mark - NIPagingScrollViewDelegate
 
 - (void)pagingScrollViewDidChangePages:(NIPagingScrollView *)pagingScrollView {
-  CHTBeauty *beauty = self.beauties[pagingScrollView.centerPageIndex];
-  self.title = beauty.name;
-  self.nameLabel.text = beauty.name;
+  [self configureInfoDisplay];
 }
 
 - (IBAction)dismiss:(id)sender {
@@ -102,6 +96,20 @@
 - (void)triggerPagingScrollView {
   [self.pagingScrollView reloadData];
   self.pagingScrollView.centerPageIndex = self.selectedIndex;
+  [self configureInfoDisplay];
+}
+
+- (void)configureInfoDisplay {
+  CHTBeauty *beauty = self.beauties[self.pagingScrollView.centerPageIndex];
+  self.title = beauty.name;
+
+  if (self.mode == CHTLargeImageViewDisplayModeNmae) {
+    self.infoLabel.textAlignment = NSTextAlignmentCenter;
+    self.infoLabel.text = beauty.name;
+  } else {
+    self.infoLabel.textAlignment = NSTextAlignmentRight;
+    self.infoLabel.text = [NSString stringWithFormat:@"%ld/%lu", (long)(self.pagingScrollView.centerPageIndex + 1), (unsigned long)[self.beauties count]];
+  }
 }
 
 @end

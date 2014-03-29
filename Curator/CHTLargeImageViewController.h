@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM (NSInteger, CHTLargeImageViewDisplayMode) {
+  CHTLargeImageViewDisplayModeNmae,
+  CHTLargeImageViewDisplayModeIndex
+};
+
 @interface CHTLargeImageViewController : UIViewController
 @property (nonatomic, strong) NSArray *beauties;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, assign) CHTLargeImageViewDisplayMode mode;
 @end
