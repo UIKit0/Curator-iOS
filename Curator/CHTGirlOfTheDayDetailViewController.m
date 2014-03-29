@@ -11,6 +11,10 @@
 #import "CHTHTTPSessionManager.h"
 #import "CHTNavigatonBarTitleView.h"
 #import "NSString+Date.h"
+#import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
+
+@interface CHTGirlOfTheDayDetailViewController () <NHBalancedFlowLayoutDelegate>
+@end
 
 @implementation CHTGirlOfTheDayDetailViewController
 
@@ -26,6 +30,20 @@
   self.navigationItem.titleView = titleView;
 
   self.shouldShowCellWithName = NO;
+
+  NHBalancedFlowLayout *layout = (NHBalancedFlowLayout *)self.collectionViewLayout;
+  CGFloat spacing;
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    spacing = 15;
+  } else {
+    spacing = 5;
+  }
+  layout.minimumLineSpacing = spacing;
+  layout.minimumInteritemSpacing = spacing;
+  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
+  layout.footerReferenceSize = CGSizeMake(40, 40);
+
+  [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:UICollectionElementKindSectionFooter];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -34,6 +52,17 @@
   CHTLargeImageViewController *vc = segue.destinationViewController;
   vc.beauties = self.beauties;
   vc.selectedIndex = indexPath.item;
+}
+
+#pragma mark - NHBalancedFlowLayoutDelegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(NHBalancedFlowLayout *)collectionViewLayout preferredSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.item < 0 || indexPath.item >= self.beauties.count) {
+    return CGSizeZero;
+  }
+
+  CHTBeauty *beauty = self.beauties[indexPath.item];
+  return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
 }
 
 #pragma mark - Public Methods
