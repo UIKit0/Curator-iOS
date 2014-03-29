@@ -23,6 +23,8 @@
 
   // Enable network activity indicator
   [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+
+  [application setStatusBarHidden:NO];
   return YES;
 }
 
