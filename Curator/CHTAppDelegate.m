@@ -7,12 +7,16 @@
 //
 
 #import "CHTAppDelegate.h"
-#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/SDWebImageManager.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 @implementation CHTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // Setup cache key filter
+  [SDWebImageManager sharedManager].cacheKeyFilter = ^(NSURL *url) {
+    return [url absoluteString];
+  };
   // Limit maximum image cache size, in bytes.
   [SDImageCache sharedImageCache].maxCacheSize = 256 * 1024 * 1024;
   [[SDImageCache sharedImageCache] cleanDisk];

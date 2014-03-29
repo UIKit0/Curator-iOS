@@ -81,7 +81,14 @@
 
   __weak typeof(self) weakSelf = self;
 
-  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+  UIImage *placeholder = nil;
+  SDWebImageManager *manager = [SDWebImageManager sharedManager];
+  if (manager.cacheKeyFilter) {
+    NSString *key = manager.cacheKeyFilter(beauty.thumbnailURL);
+    placeholder = [manager.imageCache imageFromDiskCacheForKey:key];
+  }
+
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:placeholder options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;

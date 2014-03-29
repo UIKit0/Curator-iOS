@@ -200,7 +200,7 @@
 				52A5FC611898DD5F00EFB863 /* Model */,
 				52A5FC5D1898B11400EFB863 /* Network */,
 				52306D121898A2C1008592DA /* Supporting Files */,
-				52A5FC581898A9E400EFB863 /* UI */,
+				52A5FC581898A9E400EFB863 /* UI Assets */,
 				5205411D1899077700A1D16A /* View Controllers */,
 				5205411E1899078900A1D16A /* Views */,
 			);
@@ -256,14 +256,14 @@
 			name = "Collection View Cells";
 			sourceTree = "<group>";
 		};
-		52A5FC581898A9E400EFB863 /* UI */ = {
+		52A5FC581898A9E400EFB863 /* UI Assets */ = {
 			isa = PBXGroup;
 			children = (
 				52306D261898A2C1008592DA /* Images.xcassets */,
 				528F52C0189D510800BB3997 /* iPad.storyboard */,
 				528F52BD189D4ED000BB3997 /* iPhone.storyboard */,
 			);
-			name = UI;
+			name = "UI Assets";
 			sourceTree = "<group>";
 		};
 		52A5FC591898AE3A00EFB863 /* Basic */ = {
