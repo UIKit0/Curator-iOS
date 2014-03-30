@@ -7,14 +7,25 @@
 //
 
 #import "CHTStreamViewController.h"
-#import "CHTLargeImageViewController.h"
 #import "CHTHTTPSessionManager.h"
+#import "CHTFullScreenPagingBeautyView.h"
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 
 @interface CHTStreamViewController () <CHTCollectionViewDelegateWaterfallLayout>
+@property (nonatomic, strong) CHTFullScreenPagingBeautyView *fullScreenView;
 @end
 
 @implementation CHTStreamViewController
+
+#pragma mark - Properties
+
+- (CHTFullScreenPagingBeautyView *)fullScreenView {
+  if (!_fullScreenView) {
+    _fullScreenView = [[CHTFullScreenPagingBeautyView alloc] init];
+    _fullScreenView.mode = CHTFullScreenPagingBeautyViewDisplayModeNmae;
+  }
+  return _fullScreenView;
+}
 
 #pragma mark - UIViewController
 
@@ -42,20 +53,17 @@
   [self setupCollectionViewLayoutForOrientation:toInterfaceOrientation];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  CHTBeautyCell *cell = (CHTBeautyCell *)sender;
-  NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
-  CHTLargeImageViewController *vc = segue.destinationViewController;
-  vc.mode = CHTLargeImageViewDisplayModeNmae;
-  vc.beauties = self.beauties;
-  vc.selectedIndex = indexPath.item;
-}
-
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
   return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  self.fullScreenView.beauties = self.beauties;
+  self.fullScreenView.selectedIndex = indexPath.item;
+  [self.fullScreenView present];
 }
 
 #pragma mark - Public Methods

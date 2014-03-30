@@ -13,7 +13,6 @@
 		5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205412318993CF200A1D16A /* CHTBeautyCell.m */; };
 		520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */; };
 		5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207212618996DC80046FB4F /* CHTStreamViewController.m */; };
-		52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52274C3E189BF82600347629 /* CHTLargeImageViewController.m */; };
 		52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52274C41189C02FA00347629 /* CHTLargeImageView.m */; };
 		52306D0C1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D0E1898A2C1008592DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0D1898A2C1008592DA /* CoreGraphics.framework */; };
@@ -35,6 +34,7 @@
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
 		52A5FC6D1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */; };
+		52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */; };
 		52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */; };
 		B43541F45A224273A61A2A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF27B99164BF78EEB51A8 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -60,8 +60,6 @@
 		520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTGirlOfTheDayDetailViewController.m; sourceTree = "<group>"; };
 		5207212518996DC80046FB4F /* CHTStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStreamViewController.h; sourceTree = "<group>"; };
 		5207212618996DC80046FB4F /* CHTStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStreamViewController.m; sourceTree = "<group>"; };
-		52274C3D189BF82600347629 /* CHTLargeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLargeImageViewController.h; sourceTree = "<group>"; };
-		52274C3E189BF82600347629 /* CHTLargeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLargeImageViewController.m; sourceTree = "<group>"; };
 		52274C40189C02FA00347629 /* CHTLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLargeImageView.h; sourceTree = "<group>"; };
 		52274C41189C02FA00347629 /* CHTLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLargeImageView.m; sourceTree = "<group>"; };
 		52306D081898A2C1008592DA /* Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +92,8 @@
 		52A5FC621898DD8500EFB863 /* CHTBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeauty.h; sourceTree = "<group>"; };
 		52A5FC631898DD8500EFB863 /* CHTBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeauty.m; sourceTree = "<group>"; };
 		52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHTTPSessionManagerSpec.m; sourceTree = "<group>"; };
+		52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFullScreenPagingBeautyView.h; sourceTree = "<group>"; };
+		52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFullScreenPagingBeautyView.m; sourceTree = "<group>"; };
 		52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFetchingBaseViewController.h; sourceTree = "<group>"; };
 		52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFetchingBaseViewController.m; sourceTree = "<group>"; };
 		A52BF27B99164BF78EEB51A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +136,6 @@
 				520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */,
 				5205411F189907A700A1D16A /* CHTGirlOfTheDayOverviewController.h */,
 				52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */,
-				52274C3D189BF82600347629 /* CHTLargeImageViewController.h */,
-				52274C3E189BF82600347629 /* CHTLargeImageViewController.m */,
 				5207212518996DC80046FB4F /* CHTStreamViewController.h */,
 				5207212618996DC80046FB4F /* CHTStreamViewController.m */,
 			);
@@ -148,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				529DDF9018E6656A00DE5DE4 /* Collection View Cells */,
+				52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */,
+				52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */,
 				52274C40189C02FA00347629 /* CHTLargeImageView.h */,
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
 				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
@@ -476,11 +476,11 @@
 				5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */,
 				529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */,
 				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
+				52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
 				52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */,
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,
 				52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */,
-				52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */,
 				525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */,
 				52038E4518E31E2000642001 /* CHTNavigatonBarTitleView.m in Sources */,
 				5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */,

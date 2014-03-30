@@ -7,16 +7,27 @@
 //
 
 #import "CHTGirlOfTheDayDetailViewController.h"
-#import "CHTLargeImageViewController.h"
 #import "CHTHTTPSessionManager.h"
+#import "CHTFullScreenPagingBeautyView.h"
 #import "CHTNavigatonBarTitleView.h"
 #import "NSString+Date.h"
 #import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
 
 @interface CHTGirlOfTheDayDetailViewController () <NHBalancedFlowLayoutDelegate>
+@property (nonatomic, strong) CHTFullScreenPagingBeautyView *fullScreenView;
 @end
 
 @implementation CHTGirlOfTheDayDetailViewController
+
+#pragma mark - Properties
+
+- (CHTFullScreenPagingBeautyView *)fullScreenView {
+  if (!_fullScreenView) {
+    _fullScreenView = [[CHTFullScreenPagingBeautyView alloc] init];
+    _fullScreenView.mode = CHTFullScreenPagingBeautyViewDisplayModeIndex;
+  }
+  return _fullScreenView;
+}
 
 #pragma mark - UIViewController
 
@@ -46,15 +57,6 @@
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:UICollectionElementKindSectionFooter];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  CHTBeautyCell *cell = (CHTBeautyCell *)sender;
-  NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
-  CHTLargeImageViewController *vc = segue.destinationViewController;
-  vc.mode = CHTLargeImageViewDisplayModeIndex;
-  vc.beauties = self.beauties;
-  vc.selectedIndex = indexPath.item;
-}
-
 #pragma mark - NHBalancedFlowLayoutDelegate
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(NHBalancedFlowLayout *)collectionViewLayout preferredSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,6 +66,12 @@
 
   CHTBeauty *beauty = self.beauties[indexPath.item];
   return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  self.fullScreenView.beauties = self.beauties;
+  self.fullScreenView.selectedIndex = indexPath.item;
+  [self.fullScreenView present];
 }
 
 #pragma mark - Public Methods

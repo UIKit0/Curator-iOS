@@ -13,7 +13,7 @@
 @implementation CHTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Setup cache key filter
+  // Setup downloaded image cache key filter
   [SDWebImageManager sharedManager].cacheKeyFilter = ^(NSURL *url) {
     return [url absoluteString];
   };

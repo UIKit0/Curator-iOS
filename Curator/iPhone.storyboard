@@ -196,7 +196,6 @@
                                     <outlet property="imageView" destination="ip0-Wb-PSL" id="ivr-fe-eJ6"/>
                                     <outlet property="indicator" destination="SUL-8p-LaU" id="Veq-dP-mrS"/>
                                     <outlet property="nameLabel" destination="fgn-Ez-ANV" id="1iK-fb-23w"/>
-                                    <segue destination="jI5-BZ-pkX" kind="modal" identifier="Show Large View" customClass="CHTShowLargeImageSegue" modalTransitionStyle="crossDissolve" id="ole-zL-2XJ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -211,75 +210,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgi-JO-NEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4072" y="1461"/>
-        </scene>
-        <!--Large Image View Controller-->
-        <scene sceneID="aZS-eN-6j3">
-            <objects>
-                <viewController modalPresentationStyle="currentContext" hidesBottomBarWhenPushed="YES" id="jI5-BZ-pkX" customClass="CHTLargeImageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rTr-kf-HUe"/>
-                        <viewControllerLayoutGuide type="bottom" id="STy-aP-VBl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q8e-rn-p8Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-AT-0jL" customClass="NIPagingScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Hgv-hh-Ssg" appends="YES" id="WEg-Jm-g1d"/>
-                                    <outletCollection property="gestureRecognizers" destination="G4E-ep-Iwl" appends="YES" id="6aT-89-zuO"/>
-                                </connections>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3a-Sd-New" userLabel="Info Label">
-                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wvT-ls-ugd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="o3a-Sd-New" firstAttribute="leading" secondItem="Q8e-rn-p8Z" secondAttribute="leading" id="LAv-sg-flU"/>
-                            <constraint firstAttribute="bottom" secondItem="o3a-Sd-New" secondAttribute="bottom" id="QGK-Bj-Khw"/>
-                            <constraint firstAttribute="trailing" secondItem="o3a-Sd-New" secondAttribute="trailing" id="VIq-ad-ySf"/>
-                            <constraint firstItem="7W7-AT-0jL" firstAttribute="top" secondItem="rTr-kf-HUe" secondAttribute="bottom" id="daX-g0-Mpg"/>
-                            <constraint firstItem="STy-aP-VBl" firstAttribute="top" secondItem="7W7-AT-0jL" secondAttribute="bottom" id="hrt-CO-KAy"/>
-                            <constraint firstItem="7W7-AT-0jL" firstAttribute="leading" secondItem="Q8e-rn-p8Z" secondAttribute="leading" id="qEl-Bb-K9a"/>
-                            <constraint firstAttribute="trailing" secondItem="7W7-AT-0jL" secondAttribute="trailing" id="r5x-a3-dL9"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="I8p-CQ-Ay6"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="infoLabel" destination="o3a-Sd-New" id="ULL-Kp-dGY"/>
-                        <outlet property="pagingScrollView" destination="7W7-AT-0jL" id="Ll7-1Z-z0d"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aS2-jx-pjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Hgv-hh-Ssg">
-                    <connections>
-                        <action selector="dismiss:" destination="jI5-BZ-pkX" id="8EI-7v-Gst"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="G4E-ep-Iwl">
-                    <connections>
-                        <action selector="dismiss:" destination="jI5-BZ-pkX" id="fae-cj-e7N"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="4902" y="882"/>
         </scene>
         <!--Stream View Controller - 正妹流-->
         <scene sceneID="d7Z-Is-5C2">
@@ -337,7 +267,6 @@
                                     <outlet property="imageView" destination="bFy-Nf-TZW" id="atK-Hx-paD"/>
                                     <outlet property="indicator" destination="RLZ-nP-f1y" id="OvI-Gk-qK1"/>
                                     <outlet property="nameLabel" destination="0Hh-je-RTG" id="U9f-8e-G8a"/>
-                                    <segue destination="jI5-BZ-pkX" kind="modal" identifier="Show Large View" customClass="CHTShowLargeImageSegue" modalTransitionStyle="crossDissolve" id="W90-yp-pyg"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -381,7 +310,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="W90-yp-pyg"/>
-    </inferredMetricsTieBreakers>
 </document>

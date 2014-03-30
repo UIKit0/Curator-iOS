@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="17T-Xa-6dc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="17T-Xa-6dc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -31,9 +31,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="SAO-Cx-0yA" customClass="NHBalancedFlowLayout"/>
+                        <collectionViewLayout key="collectionViewLayout" id="SAO-Cx-0yA" customClass="CHTCollectionViewWaterfallLayout"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="qIh-2a-GGA" customClass="CHTBeautyCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="qIh-2a-GGA" customClass="CHTBeautyOfTheDayCell">
                                 <rect key="frame" x="0.0" y="64" width="319" height="425"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -169,7 +169,6 @@
                                     <outlet property="imageView" destination="6bl-j4-186" id="BAM-Mg-MWB"/>
                                     <outlet property="indicator" destination="lIe-2G-Dq0" id="Zrm-GZ-Fgn"/>
                                     <outlet property="nameLabel" destination="Mao-1D-p9B" id="KgI-Zx-zRr"/>
-                                    <segue destination="KPe-ki-RLM" kind="push" identifier="Show Large View" id="BBu-R6-DJF"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -184,44 +183,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljU-oE-zWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2859" y="693"/>
-        </scene>
-        <!--Large Image View Controller-->
-        <scene sceneID="Uxc-xn-i4e">
-            <objects>
-                <viewController modalPresentationStyle="currentContext" hidesBottomBarWhenPushed="YES" id="KPe-ki-RLM" customClass="CHTLargeImageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gBG-lh-fF7"/>
-                        <viewControllerLayoutGuide type="bottom" id="mCi-hM-p1e"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N8W-vL-De3">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRC-fk-E4x" customClass="NIPagingScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="eRC-fk-E4x" firstAttribute="leading" secondItem="N8W-vL-De3" secondAttribute="leading" id="9Yv-yY-KAt"/>
-                            <constraint firstItem="eRC-fk-E4x" firstAttribute="top" secondItem="gBG-lh-fF7" secondAttribute="bottom" id="JCm-SL-zzf"/>
-                            <constraint firstAttribute="trailing" secondItem="eRC-fk-E4x" secondAttribute="trailing" id="daM-HN-E5O"/>
-                            <constraint firstItem="mCi-hM-p1e" firstAttribute="top" secondItem="eRC-fk-E4x" secondAttribute="bottom" id="oga-BA-7RW"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="1ni-zZ-Fwf"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="pagingScrollView" destination="eRC-fk-E4x" id="vxP-I7-Nv2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4cG-YS-mIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3893" y="134"/>
         </scene>
         <!--Stream View Controller - 正妹流-->
         <scene sceneID="n6W-fj-AEp">
@@ -279,7 +240,6 @@
                                     <outlet property="imageView" destination="AJJ-Ta-Xgf" id="USb-6O-Rtw"/>
                                     <outlet property="indicator" destination="9Wm-zs-lAF" id="hQ3-vd-P2d"/>
                                     <outlet property="nameLabel" destination="Zdk-Vi-0R5" id="Cml-xX-Cv7"/>
-                                    <segue destination="KPe-ki-RLM" kind="push" identifier="Show Large View" id="Nam-a8-2fc"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -315,15 +275,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gril-stream" width="25" height="25"/>
-        <image name="one-girl-a-day" width="25" height="25"/>
+        <image name="gril-stream" width="29" height="27"/>
+        <image name="one-girl-a-day" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Nam-a8-2fc"/>
-    </inferredMetricsTieBreakers>
 </document>
