@@ -27,6 +27,7 @@ PODS:
   - Mantle (1.4.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.4.1)
+  - MRCircularProgressView (0.1)
   - NHBalancedFlowLayout (HEAD based on 0.2)
   - Nimbus/Core (1.2.0)
   - Nimbus/PagingScrollView (1.2.0):
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout (HEAD)
   - Kiwi/XCTest
   - Mantle
+  - MRCircularProgressView
   - NHBalancedFlowLayout (HEAD)
   - Nimbus/PagingScrollView
   - SDWebImage
@@ -49,6 +51,7 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: accc91bfcd82710e44025d48961b79473d84375a
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
   Mantle: 0714cdb2b8559d9e6c2410d6a8529e3307bff189
+  MRCircularProgressView: 915074989df499e399f75d79e0a8a23e13c4c896
   NHBalancedFlowLayout: 3be7c4a41f4dd918445e4823de25bc3cb7a18b4a
   Nimbus: bbde56c7e845d3c38c1f484018ef1bb3259c0507
   SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e

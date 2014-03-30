@@ -9,10 +9,11 @@
 #import "CHTLargeImageView.h"
 #import "CHTBeauty.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MRCircularProgressView/MRCircularProgressView.h>
 
 @interface CHTLargeImageView ()
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UIActivityIndicatorView *indicator;
+@property (nonatomic, strong) MRCircularProgressView *indicator;
 @end
 
 @implementation CHTLargeImageView
@@ -29,11 +30,15 @@
   return _imageView;
 }
 
-- (UIActivityIndicatorView *)indicator {
+- (MRCircularProgressView *)indicator {
   if (!_indicator) {
-    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _indicator = [[MRCircularProgressView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _indicator.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     _indicator.center = CGPointMake(CGRectGetMidX(self.imageView.bounds), CGRectGetMidY(self.imageView.bounds));
+    _indicator.progressArcWidth = 4;
+    _indicator.progressColor = [UIColor whiteColor];
+    _indicator.backgroundColor = [UIColor clearColor];
+    _indicator.alpha = 0.6;
   }
   return _indicator;
 }
@@ -51,32 +56,15 @@
 - (void)prepareForReuse {
   [self.imageView cancelCurrentImageLoad];
   self.imageView.image = nil;
-  [self.indicator stopAnimating];
-}
-
-#pragma mark - UIView
-
-- (void)layoutSubviews {
-  [super layoutSubviews];
-
-  if (!self.imageView.image) {
-    return;
-  }
-
-  CGSize imageSize = self.imageView.image.size;
-  CGSize imageViewSize = self.imageView.bounds.size;
-  if (imageSize.width <= imageViewSize.width &&
-      imageSize.height <= imageViewSize.height) {
-    self.imageView.contentMode = UIViewContentModeCenter;
-  } else {
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-  }
+  [self.indicator setProgress:0 animated:NO];
+  [self.indicator setHidden:YES];
 }
 
 #pragma mark - Public Methods
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
-  [self.indicator startAnimating];
+  [self.indicator setHidden:NO];
+  self.imageView.contentMode = UIViewContentModeScaleAspectFit;
   [self setNeedsLayout];
 
   __weak typeof(self) weakSelf = self;
@@ -88,12 +76,28 @@
     placeholder = [manager.imageCache imageFromDiskCacheForKey:key];
   }
 
-  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:placeholder options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+  [self.imageView setImageWithURL:beauty.imageURL placeholderImage:placeholder options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
     __strong typeof(self) strongSelf = weakSelf;
     if (!strongSelf) {
       return;
     }
-    [strongSelf.indicator stopAnimating];
+    CGFloat progress = (CGFloat)receivedSize/(CGFloat)expectedSize;
+    [strongSelf.indicator setProgress:progress animated:YES];
+  } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (!strongSelf) {
+      return;
+    }
+
+    CGSize imageSize = image.size;
+    CGSize imageViewSize = strongSelf.imageView.bounds.size;
+    if (imageSize.width <= imageViewSize.width &&
+        imageSize.height <= imageViewSize.height) {
+      strongSelf.imageView.contentMode = UIViewContentModeCenter;
+    }
+
+    [strongSelf.indicator setProgress:0 animated:NO];
+    [strongSelf.indicator setHidden:YES];
     [strongSelf setNeedsLayout];
   }];
 }
