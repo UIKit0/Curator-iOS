@@ -18,6 +18,10 @@ Curator-iOS
 * 支援快取，看妹不 lag
 * 支援「正妹流」跟「一天一妹」
 
+更新紀錄
+=======
+請參考 [Releases Page]
+
 接下來...
 ========
 * 支援 iPad（開發中）
@@ -27,3 +31,4 @@ Curator-iOS
 * 儲存圖片（？）
 
 [小海嚴選正妹]: http://curator.im/
+[Releases Page]: https://github.com/chiahsien/Curator-iOS/releases/latest
