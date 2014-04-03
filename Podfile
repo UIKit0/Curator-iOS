@@ -8,10 +8,10 @@ pod 'SDWebImage'
 pod 'Mantle'
 
 # UI
-pod 'SVProgressHUD'
-pod 'NHBalancedFlowLayout'
-pod 'CHTCollectionViewWaterfallLayout'
+pod 'NHBalancedFlowLayout', :head
+pod 'CHTCollectionViewWaterfallLayout', :head
 pod 'Nimbus/PagingScrollView'
+pod 'MRCircularProgressView'
 
 # Testing
 target :CuratorTests, :exclusive => true do

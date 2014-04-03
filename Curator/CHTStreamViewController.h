@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Nelson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHTFetchingBaseViewController.h"
 
-@interface CHTStreamViewController : UICollectionViewController
+@interface CHTStreamViewController : CHTFetchingBaseViewController
 
 @end

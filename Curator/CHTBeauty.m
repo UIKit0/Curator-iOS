@@ -14,13 +14,24 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   return @{
-    @"name": @"name",
-    @"objectID": @"id",
-    @"urlString": @"image",
-    @"width": @"width",
-    @"height": @"height",
-    @"whichDay": @"date"
+    @"name" : @"name",
+    @"objectID" : @"id",
+    @"thumbnailURL" : @"thumbnail",
+    @"thumbnailWidth" : @"thumbnail_width",
+    @"thumbnailHeight" : @"thumbnail_height",
+    @"imageURL" : @"image",
+    @"width" : @"width",
+    @"height" : @"height",
+    @"whichDay" : @"date"
   };
+}
+
++ (NSValueTransformer *)imageURLJSONTransformer {
+  return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)thumbnailURLJSONTransformer {
+  return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end

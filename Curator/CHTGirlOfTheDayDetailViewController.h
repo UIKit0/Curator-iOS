@@ -6,10 +6,8 @@
 //  Copyright (c) 2014年 Nelson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHTFetchingBaseViewController.h"
 
-@class CHTBeauty;
-
-@interface CHTGirlOfTheDayDetailViewController : UICollectionViewController
+@interface CHTGirlOfTheDayDetailViewController : CHTFetchingBaseViewController
 @property (nonatomic, strong) CHTBeauty *beauty;
 @end

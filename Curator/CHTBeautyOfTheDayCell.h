@@ -1,15 +1,15 @@
 //
-//  CHTLargeImageView.h
+//  CHTBeautyOfTheDayCell.h
 //  Curator
 //
-//  Created by Nelson on 2014/2/1.
+//  Created by Nelson on 2014/3/27.
 //  Copyright (c) 2014年 Nelson. All rights reserved.
 //
 
-#import "NIPagingScrollViewPage.h"
+#import <UIKit/UIKit.h>
 
 @class CHTBeauty;
 
-@interface CHTLargeImageView : NIPagingScrollViewPage
+@interface CHTBeautyOfTheDayCell : UICollectionViewCell
 - (void)configureWithBeauty:(CHTBeauty *)beauty;
 @end

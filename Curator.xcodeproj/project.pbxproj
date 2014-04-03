@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		35DEBE223AAC4540842FA66D /* libPods-CuratorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D368801B51417F9DDB36C5 /* libPods-CuratorTests.a */; };
+		52038E4518E31E2000642001 /* CHTNavigatonBarTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */; };
 		52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */; };
 		5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205412318993CF200A1D16A /* CHTBeautyCell.m */; };
 		520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */; };
 		5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207212618996DC80046FB4F /* CHTStreamViewController.m */; };
-		52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52274C3E189BF82600347629 /* CHTLargeImageViewController.m */; };
 		52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52274C41189C02FA00347629 /* CHTLargeImageView.m */; };
 		52306D0C1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D0E1898A2C1008592DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0D1898A2C1008592DA /* CoreGraphics.framework */; };
@@ -25,12 +25,17 @@
 		52306D2F1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D301898A2C1008592DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0F1898A2C1008592DA /* UIKit.framework */; };
 		52306D381898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D361898A2C1008592DA /* InfoPlist.strings */; };
+		525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */; };
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
+		529DDF8C18E32BEC00DE5DE4 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */; };
+		529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */; };
 		52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */; };
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
 		52A5FC6D1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */; };
+		52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */; };
+		52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */; };
 		B43541F45A224273A61A2A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF27B99164BF78EEB51A8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52038E4318E31E2000642001 /* CHTNavigatonBarTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTNavigatonBarTitleView.h; sourceTree = "<group>"; };
+		52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTNavigatonBarTitleView.m; sourceTree = "<group>"; };
 		5205411F189907A700A1D16A /* CHTGirlOfTheDayOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTGirlOfTheDayOverviewController.h; sourceTree = "<group>"; };
 		52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTGirlOfTheDayOverviewController.m; sourceTree = "<group>"; };
 		5205412218993CF200A1D16A /* CHTBeautyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeautyCell.h; sourceTree = "<group>"; };
@@ -53,8 +60,6 @@
 		520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTGirlOfTheDayDetailViewController.m; sourceTree = "<group>"; };
 		5207212518996DC80046FB4F /* CHTStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTStreamViewController.h; sourceTree = "<group>"; };
 		5207212618996DC80046FB4F /* CHTStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTStreamViewController.m; sourceTree = "<group>"; };
-		52274C3D189BF82600347629 /* CHTLargeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLargeImageViewController.h; sourceTree = "<group>"; };
-		52274C3E189BF82600347629 /* CHTLargeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLargeImageViewController.m; sourceTree = "<group>"; };
 		52274C40189C02FA00347629 /* CHTLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLargeImageView.h; sourceTree = "<group>"; };
 		52274C41189C02FA00347629 /* CHTLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLargeImageView.m; sourceTree = "<group>"; };
 		52306D081898A2C1008592DA /* Curator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +77,14 @@
 		52306D2D1898A2C1008592DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52306D351898A2C1008592DA /* CuratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuratorTests-Info.plist"; sourceTree = "<group>"; };
 		52306D371898A2C1008592DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLoadMoreView.h; sourceTree = "<group>"; };
+		525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLoadMoreView.m; sourceTree = "<group>"; };
 		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		528F52C0189D510800BB3997 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeautyOfTheDayCell.h; sourceTree = "<group>"; };
+		529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeautyOfTheDayCell.m; sourceTree = "<group>"; };
 		52A5FC5A1898AE8400EFB863 /* CHTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTAtlas.h; sourceTree = "<group>"; };
 		52A5FC5B1898AE8400EFB863 /* CHTAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTAtlas.m; sourceTree = "<group>"; };
 		52A5FC5E1898B32600EFB863 /* CHTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -81,6 +92,10 @@
 		52A5FC621898DD8500EFB863 /* CHTBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeauty.h; sourceTree = "<group>"; };
 		52A5FC631898DD8500EFB863 /* CHTBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeauty.m; sourceTree = "<group>"; };
 		52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHTTPSessionManagerSpec.m; sourceTree = "<group>"; };
+		52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFullScreenPagingBeautyView.h; sourceTree = "<group>"; };
+		52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFullScreenPagingBeautyView.m; sourceTree = "<group>"; };
+		52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFetchingBaseViewController.h; sourceTree = "<group>"; };
+		52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFetchingBaseViewController.m; sourceTree = "<group>"; };
 		A52BF27B99164BF78EEB51A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91B01763D17441D80AFE642 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E6D368801B51417F9DDB36C5 /* libPods-CuratorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CuratorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,12 +131,11 @@
 		5205411D1899077700A1D16A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				52DBC2CA18A60E6D00923865 /* Base */,
 				520541251899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.h */,
 				520541261899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m */,
 				5205411F189907A700A1D16A /* CHTGirlOfTheDayOverviewController.h */,
 				52054120189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m */,
-				52274C3D189BF82600347629 /* CHTLargeImageViewController.h */,
-				52274C3E189BF82600347629 /* CHTLargeImageViewController.m */,
 				5207212518996DC80046FB4F /* CHTStreamViewController.h */,
 				5207212618996DC80046FB4F /* CHTStreamViewController.m */,
 			);
@@ -131,10 +145,15 @@
 		5205411E1899078900A1D16A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
-				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				529DDF9018E6656A00DE5DE4 /* Collection View Cells */,
+				52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */,
+				52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */,
 				52274C40189C02FA00347629 /* CHTLargeImageView.h */,
 				52274C41189C02FA00347629 /* CHTLargeImageView.m */,
+				525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */,
+				525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */,
+				52038E4318E31E2000642001 /* CHTNavigatonBarTitleView.h */,
+				52038E4418E31E2000642001 /* CHTNavigatonBarTitleView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -177,10 +196,11 @@
 			isa = PBXGroup;
 			children = (
 				52A5FC591898AE3A00EFB863 /* Basic */,
+				529DDF8918E32B7900DE5DE4 /* Category */,
 				52A5FC611898DD5F00EFB863 /* Model */,
 				52A5FC5D1898B11400EFB863 /* Network */,
 				52306D121898A2C1008592DA /* Supporting Files */,
-				52A5FC581898A9E400EFB863 /* UI */,
+				52A5FC581898A9E400EFB863 /* UI Assets */,
 				5205411D1899077700A1D16A /* View Controllers */,
 				5205411E1899078900A1D16A /* Views */,
 			);
@@ -216,14 +236,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		52A5FC581898A9E400EFB863 /* UI */ = {
+		529DDF8918E32B7900DE5DE4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */,
+				529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		529DDF9018E6656A00DE5DE4 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
+				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
+				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
+			);
+			name = "Collection View Cells";
+			sourceTree = "<group>";
+		};
+		52A5FC581898A9E400EFB863 /* UI Assets */ = {
 			isa = PBXGroup;
 			children = (
 				52306D261898A2C1008592DA /* Images.xcassets */,
 				528F52C0189D510800BB3997 /* iPad.storyboard */,
 				528F52BD189D4ED000BB3997 /* iPhone.storyboard */,
 			);
-			name = UI;
+			name = "UI Assets";
 			sourceTree = "<group>";
 		};
 		52A5FC591898AE3A00EFB863 /* Basic */ = {
@@ -253,6 +293,15 @@
 				52A5FC631898DD8500EFB863 /* CHTBeauty.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		52DBC2CA18A60E6D00923865 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */,
+				52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +353,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CHT;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Nelson;
 				TargetAttributes = {
 					52306D2B1898A2C1008592DA = {
@@ -425,13 +474,18 @@
 				52A5FC5C1898AE8400EFB863 /* CHTAtlas.m in Sources */,
 				52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */,
 				5205412418993CF200A1D16A /* CHTBeautyCell.m in Sources */,
+				529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */,
+				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
+				52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
 				52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */,
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,
 				52274C42189C02FA00347629 /* CHTLargeImageView.m in Sources */,
-				52274C3F189BF82600347629 /* CHTLargeImageViewController.m in Sources */,
+				525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */,
+				52038E4518E31E2000642001 /* CHTNavigatonBarTitleView.m in Sources */,
 				5207212718996DC80046FB4F /* CHTStreamViewController.m in Sources */,
 				52306D181898A2C1008592DA /* main.m in Sources */,
+				529DDF8C18E32BEC00DE5DE4 /* NSString+Date.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +531,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -490,7 +543,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -517,7 +570,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -530,7 +582,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -556,8 +608,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -571,8 +624,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -581,7 +635,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB306A0256CC4DE986034713 /* Pods-CuratorTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Curator.app/Curator";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -606,7 +659,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB306A0256CC4DE986034713 /* Pods-CuratorTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Curator.app/Curator";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

@@ -9,51 +9,45 @@
 #import "CHTGirlOfTheDayOverviewController.h"
 #import "CHTGirlOfTheDayDetailViewController.h"
 #import "CHTHTTPSessionManager.h"
-#import "CHTBeauty.h"
-#import "CHTBeautyCell.h"
-#import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
-#import <SVProgressHUD/SVProgressHUD.h>
+#import "CHTBeautyOfTheDayCell.h"
+#import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 
-@interface CHTGirlOfTheDayOverviewController () <NHBalancedFlowLayoutDelegate>
-@property (nonatomic, strong) NSMutableArray *beauties;
-@property (nonatomic, assign) BOOL isFetching;
-@property (nonatomic, assign) NSInteger fetchPage;
+@interface CHTGirlOfTheDayOverviewController () <CHTCollectionViewDelegateWaterfallLayout>
 @end
 
 @implementation CHTGirlOfTheDayOverviewController
-
-#pragma mark - Properties
-
-- (NSMutableArray *)beauties {
-  if (!_beauties) {
-    _beauties = [NSMutableArray array];
-  }
-  return _beauties;
-}
 
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  NHBalancedFlowLayout *layout = (NHBalancedFlowLayout *)self.collectionViewLayout;
+  CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
+  layout.footerHeight = 40;
+  layout.columnCount = 1;
+
   CGFloat spacing;
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
     spacing = 15;
   } else {
     spacing = 5;
   }
-  layout.minimumLineSpacing = spacing;
-  layout.minimumInteritemSpacing = spacing;
-  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
 
-  self.isFetching = NO;
-  self.fetchPage = 1;
-  [self fetchBeauties];
+  layout.sectionInset = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
+  layout.minimumColumnSpacing = spacing;
+  layout.minimumInteritemSpacing = spacing;
+
+  UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navigation-title"]];
+  self.navigationItem.titleView = titleView;
+
+  [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter];
+
+  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+  self.navigationItem.backBarButtonItem = backItem;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  CHTBeautyCell *cell = (CHTBeautyCell *)sender;
+  CHTBeautyOfTheDayCell *cell = (CHTBeautyOfTheDayCell *)sender;
   NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
   CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)segue.destinationViewController;
   vc.beauty = self.beauties[indexPath.item];
@@ -61,65 +55,29 @@
 
 #pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-  return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-  return self.beauties.count;
-}
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *identifier = @"BeautyCell";
-  CHTBeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
-                                                                  forIndexPath:indexPath];
+  CHTBeautyOfTheDayCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  [cell configureWithBeauty:beauty showName:YES];
+
+  [cell configureWithBeauty:beauty];
 
   return cell;
 }
 
-#pragma mark - NHBalancedFlowLayoutDelegate
+#pragma mark - CHTCollectionViewDelegateWaterfallLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(NHBalancedFlowLayout *)collectionViewLayout preferredSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.item < 0 || indexPath.item >= self.beauties.count) {
-    return CGSizeZero;
-  }
-
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
-  return CGSizeMake(beauty.width, beauty.height);
+  return CGSizeMake(beauty.thumbnailWidth, beauty.thumbnailHeight);
 }
 
-#pragma mark - Private Methods
+#pragma mark - Public Methods
 
 - (void)fetchBeauties {
-  if (self.isFetching) {
-    return;
-  }
+  [super fetchBeauties];
 
-  self.isFetching = YES;
-  [SVProgressHUD showWithStatus:@"Loading..."];
-
-  __weak typeof(self) weakSelf = self;
-  [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDayOverviewAtPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (!strongSelf) {
-      return;
-    }
-    [strongSelf.beauties addObjectsFromArray:beauties];
-    [strongSelf.collectionView reloadData];
-    strongSelf.fetchPage++;
-    strongSelf.isFetching = NO;
-    [SVProgressHUD dismiss];
-  } failure:^(NSURLSessionDataTask *task, NSError *error) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (!strongSelf) {
-      return;
-    }
-    strongSelf.isFetching = NO;
-    [SVProgressHUD dismiss];
-    NSLog(@"Error:\n%@", error);
-  }];
+  [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDayOverviewAtPage:self.fetchPage success:self.fetchSuccessfulBlock failure:self.fetchFailedBlock];
 }
 
 @end
