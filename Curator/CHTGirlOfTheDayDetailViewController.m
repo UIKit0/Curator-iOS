@@ -55,6 +55,11 @@
   layout.footerReferenceSize = CGSizeMake(40, 40);
 
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:UICollectionElementKindSectionFooter];
+
+  // Swipe right to go back
+  UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+  recognizer.direction = UISwipeGestureRecognizerDirectionRight;
+  [self.view addGestureRecognizer:recognizer];
 }
 
 #pragma mark - NHBalancedFlowLayoutDelegate
@@ -80,6 +85,12 @@
   [super fetchBeauties];
 
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDay:self.beauty.whichDay atPage:self.fetchPage success:self.fetchSuccessfulBlock failure:self.fetchFailedBlock];
+}
+
+#pragma mark - Private Methods
+
+- (void)pop {
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
