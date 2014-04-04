@@ -1,5 +1,5 @@
-Curator-iOS
-===========
+讓你用最爽快的方式看[小海嚴選正妹]！
+====================================
 
 ![image](https://github.com/chiahsien/Curator-iOS/raw/develop/Screenshots/1.png)
 
@@ -9,8 +9,6 @@ Curator-iOS
 
 ![image](https://github.com/chiahsien/Curator-iOS/raw/develop/Screenshots/3.png)
 
-
-## 讓你用最爽快的方式看[小海嚴選正妹]！ ##
 
 特色
 ====
@@ -24,11 +22,11 @@ Curator-iOS
 
 接下來...
 ========
-- [ ] 支援 iPad（開發中）
-- [x] 全螢幕瀏覽圖片支援直向跟橫向
-- [ ] 程式碼重構
-- [ ] 設定頁面（？）
-- [ ] 儲存圖片（？）
+* 支援 iPad（開發中）
+* ~~全螢幕瀏覽圖片支援直向跟橫向~~
+* 程式碼重構
+* 設定頁面（？）
+* 儲存圖片（？）
 
 [小海嚴選正妹]: http://curator.im/
 [Releases Page]: https://github.com/chiahsien/Curator-iOS/releases/latest
