@@ -38,6 +38,7 @@
     _infoLabel.textColor = [UIColor whiteColor];
     _infoLabel.textAlignment = NSTextAlignmentCenter;
     _infoLabel.font = [UIFont systemFontOfSize:18];
+    _infoLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.500];
     _infoLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
   }
   return _infoLabel;
@@ -48,19 +49,18 @@
 - (void)dealloc {
   _pagingScrollView.delegate = nil;
   _pagingScrollView.dataSource = nil;
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)init {
-  CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-  if (self = [super initWithFrame:frame]) {
+  if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
     [self commonInit];
   }
   return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
-  CGRect newFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-  if (self = [super initWithFrame:newFrame]) {
+  if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
     [self commonInit];
   }
   return self;
@@ -83,6 +83,11 @@
   UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
   swipe.direction = UISwipeGestureRecognizerDirectionDown;
   [self addGestureRecognizer:swipe];
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(deviceOrientationDidChange:)
+                                               name:UIDeviceOrientationDidChangeNotification
+                                             object:nil];
 }
 
 #pragma mark - NIPagingScrollViewDataSource
@@ -113,31 +118,24 @@
 #pragma mark - Public Methods
 
 - (void)present {
-  [self.pagingScrollView reloadData];
-  self.pagingScrollView.centerPageIndex = self.selectedIndex;
-  [self configureInfoDisplay];
+  [self deviceOrientationDidChange:nil];
 
   UIWindow *window = [UIApplication sharedApplication].keyWindow;
-  CGRect frame = self.frame;
-  frame.origin.y = CGRectGetHeight([UIScreen mainScreen].bounds);
-  self.frame = frame;
   [window addSubview:self];
 
   [UIView animateWithDuration:0.3 animations:^{
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    CGRect frame = self.frame;
-    frame.origin.y = 0;
-    self.frame = frame;
     self.alpha = 1;
-  } completion:nil];
+  } completion:^(BOOL finished) {
+    [self.pagingScrollView reloadData];
+    self.pagingScrollView.centerPageIndex = self.selectedIndex;
+    [self configureInfoDisplay];
+  }];
 }
 
 - (void)dismiss {
   [UIView animateWithDuration:0.3 animations:^{
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    CGRect frame = self.frame;
-    frame.origin.y = CGRectGetHeight([UIScreen mainScreen].bounds);
-    self.frame = frame;
     self.alpha = 0;
   } completion:^(BOOL finished) {
     [self removeFromSuperview];
@@ -152,8 +150,47 @@
   if (self.mode == CHTFullScreenPagingBeautyViewDisplayModeNmae) {
     self.infoLabel.text = beauty.name;
   } else {
-    self.infoLabel.text = [NSString stringWithFormat:@"%ld/%lu", (long)(self.pagingScrollView.centerPageIndex + 1), (unsigned long)[self.beauties count]];
+    self.infoLabel.text = [NSString stringWithFormat:@"%@/%@", @(self.pagingScrollView.centerPageIndex + 1), @([self.beauties count])];
   }
+}
+
+- (void)deviceOrientationDidChange:(NSNotification *)notification {
+  UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+  CGFloat angle = [self rotationAngleForOrientation:orientation];
+  self.transform = CGAffineTransformMakeRotation(angle);
+  self.frame = [UIScreen mainScreen].bounds;
+
+  if (self.superview && notification) {
+    [self.pagingScrollView reloadData];
+  }
+}
+
+- (CGFloat)rotationAngleForOrientation:(UIDeviceOrientation)orientation {
+  CGFloat angle;
+
+  switch (orientation) {
+    case UIDeviceOrientationPortrait:
+      angle = 0;
+      break;
+
+    case UIDeviceOrientationPortraitUpsideDown:
+      angle = M_PI;
+      break;
+
+    case UIDeviceOrientationLandscapeLeft:
+      angle = M_PI_2;
+      break;
+
+    case UIDeviceOrientationLandscapeRight:
+      angle = -M_PI_2;
+      break;
+
+    default:
+      angle = 0;
+      break;
+  }
+  
+  return angle;
 }
 
 @end

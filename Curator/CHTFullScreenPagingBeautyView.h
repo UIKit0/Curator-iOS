@@ -14,7 +14,7 @@ typedef NS_ENUM (NSInteger, CHTFullScreenPagingBeautyViewDisplayMode) {
 };
 
 @interface CHTFullScreenPagingBeautyView : UIView
-@property (nonatomic, strong) NSArray *beauties;
+@property (nonatomic, copy) NSArray *beauties;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, assign) CHTFullScreenPagingBeautyViewDisplayMode mode;
 - (void)present;
