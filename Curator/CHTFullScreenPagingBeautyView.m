@@ -33,11 +33,11 @@
 
 - (UILabel *)infoLabel {
   if (!_infoLabel) {
-    CGFloat height = 36;
+    CGFloat height = 24;
     _infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - height, CGRectGetWidth(self.bounds), height)];
     _infoLabel.textColor = [UIColor whiteColor];
     _infoLabel.textAlignment = NSTextAlignmentCenter;
-    _infoLabel.font = [UIFont systemFontOfSize:18];
+    _infoLabel.font = [UIFont systemFontOfSize:16];
     _infoLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.500];
     _infoLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
   }
