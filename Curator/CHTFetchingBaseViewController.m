@@ -48,6 +48,8 @@ static NSString *footerIdentifier = @"footerIdentifier";
   self.navigationController.navigationBar.tintColor = [UIColor redColor];
   self.tabBarController.tabBar.tintColor = [UIColor redColor];
   self.collectionView.backgroundColor = [UIColor colorWithRed:0.117 green:0.112 blue:0.106 alpha:1.000];
+  [self.collectionView registerNib:[UINib nibWithNibName:@"CHTBeautyCell" bundle:nil] forCellWithReuseIdentifier:@"BeautyCell"];
+
 
   __weak typeof(self) weakSelf = self;
 

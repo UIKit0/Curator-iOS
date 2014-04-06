@@ -26,6 +26,7 @@
 		52306D301898A2C1008592DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0F1898A2C1008592DA /* UIKit.framework */; };
 		52306D381898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D361898A2C1008592DA /* InfoPlist.strings */; };
 		52319A3118F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */; };
+		52319A3318F156D600FB126A /* CHTBeautyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52319A3218F156D600FB126A /* CHTBeautyCell.xib */; };
 		525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */; };
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
@@ -79,6 +80,7 @@
 		52306D351898A2C1008592DA /* CuratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuratorTests-Info.plist"; sourceTree = "<group>"; };
 		52306D371898A2C1008592DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTBeautyOfTheDayCell.xib; sourceTree = "<group>"; };
+		52319A3218F156D600FB126A /* CHTBeautyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTBeautyCell.xib; sourceTree = "<group>"; };
 		525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLoadMoreView.h; sourceTree = "<group>"; };
 		525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLoadMoreView.m; sourceTree = "<group>"; };
 		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
 				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				52319A3218F156D600FB126A /* CHTBeautyCell.xib */,
 				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
 				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
 				52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */,
@@ -388,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52319A3318F156D600FB126A /* CHTBeautyCell.xib in Resources */,
 				52319A3118F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib in Resources */,
 				52306D271898A2C1008592DA /* Images.xcassets in Resources */,
 				52306D161898A2C1008592DA /* InfoPlist.strings in Resources */,

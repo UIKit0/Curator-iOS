@@ -75,56 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="LvU-3M-R3Q" customClass="NHBalancedFlowLayout"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="ays-ZP-O0F" customClass="CHTBeautyCell">
-                                <rect key="frame" x="1" y="0.0" width="319" height="425"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ip0-Wb-PSL">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgn-Ez-ANV">
-                                            <rect key="frame" x="0.0" y="400" width="319" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="fob-52-wKN"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SUL-8p-LaU">
-                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="leading" secondItem="ays-ZP-O0F" secondAttribute="leading" id="73c-aC-Te2"/>
-                                    <constraint firstAttribute="bottom" secondItem="fgn-Ez-ANV" secondAttribute="bottom" id="Gri-Kx-EPC"/>
-                                    <constraint firstItem="fgn-Ez-ANV" firstAttribute="leading" secondItem="ays-ZP-O0F" secondAttribute="leading" id="ICe-Ym-YNt"/>
-                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="centerY" secondItem="SUL-8p-LaU" secondAttribute="centerY" id="JV9-Qw-nZG"/>
-                                    <constraint firstAttribute="trailing" secondItem="ip0-Wb-PSL" secondAttribute="trailing" id="MQV-Fr-88t"/>
-                                    <constraint firstAttribute="trailing" secondItem="fgn-Ez-ANV" secondAttribute="trailing" id="VB5-Vz-cKQ"/>
-                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="top" secondItem="ays-ZP-O0F" secondAttribute="top" id="ofw-bc-XLc"/>
-                                    <constraint firstAttribute="bottom" secondItem="ip0-Wb-PSL" secondAttribute="bottom" id="xRx-J9-XkA"/>
-                                    <constraint firstItem="ip0-Wb-PSL" firstAttribute="centerX" secondItem="SUL-8p-LaU" secondAttribute="centerX" id="zBq-NF-Sux"/>
-                                </constraints>
-                                <size key="customSize" width="319" height="425"/>
-                                <connections>
-                                    <outlet property="imageView" destination="ip0-Wb-PSL" id="ivr-fe-eJ6"/>
-                                    <outlet property="indicator" destination="SUL-8p-LaU" id="Veq-dP-mrS"/>
-                                    <outlet property="nameLabel" destination="fgn-Ez-ANV" id="1iK-fb-23w"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="fTS-MS-g9I" id="NRz-L8-uzF"/>
                             <outlet property="delegate" destination="fTS-MS-g9I" id="Ovl-vj-gRx"/>
@@ -137,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="4072" y="1461"/>
         </scene>
-        <!--Stream View Controller - 正妹流-->
+        <!--Stream View Controller-->
         <scene sceneID="d7Z-Is-5C2">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="jKm-5i-Bvb" customClass="CHTStreamViewController" sceneMemberID="viewController">
@@ -146,62 +97,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="4Dh-ut-cyk" customClass="CHTCollectionViewWaterfallLayout"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="GTv-5t-PRV" customClass="CHTBeautyCell">
-                                <rect key="frame" x="1" y="64" width="319" height="425"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-Nf-TZW">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-je-RTG">
-                                            <rect key="frame" x="0.0" y="400" width="319" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="RoR-Cw-NUb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RLZ-nP-f1y">
-                                            <rect key="frame" x="150" y="203" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="bFy-Nf-TZW" secondAttribute="trailing" id="5j4-GP-QCJ"/>
-                                    <constraint firstItem="RLZ-nP-f1y" firstAttribute="centerX" secondItem="bFy-Nf-TZW" secondAttribute="centerX" id="IyA-5K-kyj"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Hh-je-RTG" secondAttribute="bottom" id="NJY-jj-fnP"/>
-                                    <constraint firstItem="RLZ-nP-f1y" firstAttribute="centerY" secondItem="bFy-Nf-TZW" secondAttribute="centerY" id="Ujt-5P-8qj"/>
-                                    <constraint firstItem="bFy-Nf-TZW" firstAttribute="top" secondItem="GTv-5t-PRV" secondAttribute="top" id="Wjb-oA-Ub6"/>
-                                    <constraint firstItem="bFy-Nf-TZW" firstAttribute="leading" secondItem="GTv-5t-PRV" secondAttribute="leading" id="atK-ef-5hK"/>
-                                    <constraint firstAttribute="bottom" secondItem="bFy-Nf-TZW" secondAttribute="bottom" id="cQT-u5-uda"/>
-                                    <constraint firstItem="0Hh-je-RTG" firstAttribute="leading" secondItem="GTv-5t-PRV" secondAttribute="leading" id="jpt-TF-W0W"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Hh-je-RTG" secondAttribute="trailing" id="tEl-nL-gzV"/>
-                                </constraints>
-                                <size key="customSize" width="319" height="425"/>
-                                <connections>
-                                    <outlet property="imageView" destination="bFy-Nf-TZW" id="atK-Hx-paD"/>
-                                    <outlet property="indicator" destination="RLZ-nP-f1y" id="OvI-Gk-qK1"/>
-                                    <outlet property="nameLabel" destination="0Hh-je-RTG" id="U9f-8e-G8a"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="jKm-5i-Bvb" id="YBb-Sx-k6w"/>
                             <outlet property="delegate" destination="jKm-5i-Bvb" id="xTi-XJ-NDV"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="正妹流" id="0uK-kE-mpP"/>
+                    <navigationItem key="navigationItem" id="0uK-kE-mpP"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmK-Uc-wd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
