@@ -33,11 +33,19 @@
 
 - (UILabel *)infoLabel {
   if (!_infoLabel) {
-    CGFloat height = 24;
+    CGFloat height;
+    CGFloat fontSize;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+      height = 48;
+      fontSize = 32;
+    } else {
+      height = 24;
+      fontSize = 16;
+    }
     _infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - height, CGRectGetWidth(self.bounds), height)];
     _infoLabel.textColor = [UIColor whiteColor];
     _infoLabel.textAlignment = NSTextAlignmentCenter;
-    _infoLabel.font = [UIFont systemFontOfSize:16];
+    _infoLabel.font = [UIFont systemFontOfSize:fontSize];
     _infoLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.500];
     _infoLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
   }
