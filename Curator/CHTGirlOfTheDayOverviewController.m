@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  [self.collectionView registerNib:[UINib nibWithNibName:@"CHTBeautyOfTheDayCell" bundle:nil] forCellWithReuseIdentifier:@"BeautyCell"];
+
   CHTCollectionViewWaterfallLayout *layout = (CHTCollectionViewWaterfallLayout *)self.collectionViewLayout;
   layout.footerHeight = 40;
   layout.columnCount = 1;
@@ -47,8 +49,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  CHTBeautyOfTheDayCell *cell = (CHTBeautyOfTheDayCell *)sender;
-  NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+  NSIndexPath *indexPath = (NSIndexPath *)sender;
   CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)segue.destinationViewController;
   vc.beauty = self.beauties[indexPath.item];
 }
@@ -63,6 +64,12 @@
   [cell configureWithBeauty:beauty];
 
   return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  [self performSegueWithIdentifier:@"Show Detail" sender:indexPath];
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout

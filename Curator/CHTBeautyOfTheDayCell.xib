@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeautyCell" id="iye-c7-EP5" customClass="CHTBeautyOfTheDayCell">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-8F-vue">
+                        <rect key="frame" x="0.0" y="0.0" width="319" height="425"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="bCo-o3-Ii5" userLabel="White Activity Indicator">
+                        <rect key="frame" x="150" y="203" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </activityIndicatorView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" translatesAutoresizingMaskIntoConstraints="NO" id="YxE-zh-ndC" userLabel="Day Label">
+                        <rect key="frame" x="20" y="307" width="279" height="56"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="2As-zP-z4e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mira Angel - 米拉拉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" translatesAutoresizingMaskIntoConstraints="NO" id="pSq-fU-7Kw" userLabel="Name Label">
+                        <rect key="frame" x="20" y="366" width="279" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="Eim-rG-JYK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="February 28, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-iV-bwk" userLabel="Date Label">
+                        <rect key="frame" x="20" y="393" width="279" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="uhf-Hy-2vJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pyk-iV-bwk" secondAttribute="trailing" constant="20" id="ANU-PJ-ZhG"/>
+                <constraint firstItem="pSq-fU-7Kw" firstAttribute="top" secondItem="YxE-zh-ndC" secondAttribute="bottom" constant="3" id="EIx-By-UxL"/>
+                <constraint firstAttribute="trailing" secondItem="YxE-zh-ndC" secondAttribute="trailing" constant="20" id="F2a-6U-8c1"/>
+                <constraint firstAttribute="trailing" secondItem="pSq-fU-7Kw" secondAttribute="trailing" constant="20" id="FOI-RE-YcI"/>
+                <constraint firstAttribute="bottom" secondItem="pyk-iV-bwk" secondAttribute="bottom" id="UYU-ds-P0l"/>
+                <constraint firstItem="zJd-8F-vue" firstAttribute="leading" secondItem="iye-c7-EP5" secondAttribute="leading" id="WVe-bb-GT8"/>
+                <constraint firstItem="bCo-o3-Ii5" firstAttribute="centerX" secondItem="zJd-8F-vue" secondAttribute="centerX" constant="0.5" id="XLK-0C-Bod"/>
+                <constraint firstItem="pyk-iV-bwk" firstAttribute="top" secondItem="pSq-fU-7Kw" secondAttribute="bottom" constant="1" id="XiB-3v-0ld"/>
+                <constraint firstItem="zJd-8F-vue" firstAttribute="top" secondItem="iye-c7-EP5" secondAttribute="top" id="YAU-FP-l2w"/>
+                <constraint firstAttribute="trailing" secondItem="zJd-8F-vue" secondAttribute="trailing" id="aGw-xO-0zE"/>
+                <constraint firstItem="bCo-o3-Ii5" firstAttribute="centerY" secondItem="zJd-8F-vue" secondAttribute="centerY" constant="0.5" id="ard-NO-EiQ"/>
+                <constraint firstItem="pyk-iV-bwk" firstAttribute="leading" secondItem="iye-c7-EP5" secondAttribute="leading" constant="20" id="mQ2-O4-hNr"/>
+                <constraint firstItem="YxE-zh-ndC" firstAttribute="leading" secondItem="iye-c7-EP5" secondAttribute="leading" constant="20" id="uQH-RQ-NWo"/>
+                <constraint firstAttribute="bottom" secondItem="zJd-8F-vue" secondAttribute="bottom" id="wLf-xR-Wgl"/>
+                <constraint firstItem="pSq-fU-7Kw" firstAttribute="leading" secondItem="iye-c7-EP5" secondAttribute="leading" constant="20" id="wmh-Q6-bUE"/>
+            </constraints>
+            <size key="customSize" width="413" height="392"/>
+            <connections>
+                <outlet property="dateLabel" destination="pyk-iV-bwk" id="e4V-ox-6ul"/>
+                <outlet property="dayLabel" destination="YxE-zh-ndC" id="lGF-IZ-cGi"/>
+                <outlet property="imageView" destination="zJd-8F-vue" id="EzE-Tc-fCn"/>
+                <outlet property="indicator" destination="bCo-o3-Ii5" id="9Gr-Sv-Xcs"/>
+                <outlet property="nameLabel" destination="pSq-fU-7Kw" id="ZHB-Nu-Lgi"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
