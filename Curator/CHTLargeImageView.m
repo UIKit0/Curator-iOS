@@ -64,8 +64,14 @@
 
 - (void)configureWithBeauty:(CHTBeauty *)beauty {
   [self.indicator setHidden:NO];
-  self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-  [self setNeedsLayout];
+
+  CGSize imageViewSize = self.imageView.bounds.size;
+  if (beauty.width <= imageViewSize.width &&
+      beauty.height <= imageViewSize.height) {
+    self.imageView.contentMode = UIViewContentModeCenter;
+  } else {
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+  }
 
   __weak typeof(self) weakSelf = self;
 
@@ -89,17 +95,12 @@
       return;
     }
 
-    CGSize imageSize = image.size;
-    CGSize imageViewSize = strongSelf.imageView.bounds.size;
-    if (imageSize.width <= imageViewSize.width &&
-        imageSize.height <= imageViewSize.height) {
-      strongSelf.imageView.contentMode = UIViewContentModeCenter;
-    }
-
     [strongSelf.indicator setProgress:0 animated:NO];
     [strongSelf.indicator setHidden:YES];
     [strongSelf setNeedsLayout];
   }];
+
+  [self setNeedsLayout];
 }
 
 @end

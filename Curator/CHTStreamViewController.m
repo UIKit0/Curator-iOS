@@ -39,6 +39,8 @@
   self.navigationItem.titleView = titleView;
 
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter];
+
+  [self refresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

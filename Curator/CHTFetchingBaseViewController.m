@@ -94,7 +94,6 @@ static NSString *footerIdentifier = @"footerIdentifier";
 
   self.shouldShowCellWithName = YES;
   [self.collectionView addSubview:self.refreshControl];
-  [self refresh];
 }
 
 #pragma mark - Public Methods
