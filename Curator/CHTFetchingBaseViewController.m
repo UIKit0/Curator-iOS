@@ -99,6 +99,15 @@ static NSString *footerIdentifier = @"footerIdentifier";
 
 #pragma mark - Public Methods
 
+- (void)refresh {
+  self.canLoadMore = YES;
+  self.isFetching = NO;
+  self.fetchPage = 1;
+  [self.beauties removeAllObjects];
+  [self.collectionView reloadData];
+  [self fetchBeauties];
+}
+
 - (void)fetchBeauties {
   if (self.isFetching) {
     return;
@@ -150,15 +159,6 @@ static NSString *footerIdentifier = @"footerIdentifier";
   if (scrollView.contentOffset.y < scrollView.contentSize.height - scrollView.frame.size.height) {
     return;
   }
-  [self fetchBeauties];
-}
-
-#pragma mark - Private Methods
-
-- (void)refresh {
-  self.canLoadMore = YES;
-  self.isFetching = NO;
-  self.fetchPage = 1;
   [self fetchBeauties];
 }
 

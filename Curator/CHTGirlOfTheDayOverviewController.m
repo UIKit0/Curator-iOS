@@ -14,9 +14,20 @@
 #import <BDBSplitViewController/BDBSplitViewController.h>
 
 @interface CHTGirlOfTheDayOverviewController () <CHTCollectionViewDelegateWaterfallLayout>
+@property (nonatomic, strong, readonly) CHTGirlOfTheDayDetailViewController *detailViewController;
 @end
 
 @implementation CHTGirlOfTheDayOverviewController
+
+#pragma mark - Properties
+
+- (CHTGirlOfTheDayDetailViewController *)detailViewController {
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    return (CHTGirlOfTheDayDetailViewController *)[(UINavigationController *)self.splitViewController.detailViewController topViewController];
+  } else {
+    return nil;
+  }
+}
 
 #pragma mark - UIViewController
 
@@ -46,6 +57,7 @@
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter];
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    // Do nothing
   } else {
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = backItem;
@@ -74,9 +86,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   CHTBeauty *beauty = self.beauties[indexPath.item];
 
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-    CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)[(UINavigationController *)self.splitViewController.detailViewController topViewController];
-    vc.beauty = beauty;
+  if (self.detailViewController) {
+    self.detailViewController.beauty = beauty;
   } else {
     [self performSegueWithIdentifier:@"Show Detail" sender:beauty];
   }
@@ -94,7 +105,20 @@
 - (void)fetchBeauties {
   [super fetchBeauties];
 
-  [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDayOverviewAtPage:self.fetchPage success:self.fetchSuccessfulBlock failure:self.fetchFailedBlock];
+  __weak typeof(self) weakSelf = self;
+  [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDayOverviewAtPage:self.fetchPage success:^(NSArray *beauties, NSInteger totalCount, id responseObject) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (!strongSelf) {
+      return;
+    }
+
+    if (strongSelf.fetchSuccessfulBlock) {
+      strongSelf.fetchSuccessfulBlock(beauties, totalCount, responseObject);
+      if (strongSelf.fetchPage == 2) {
+        strongSelf.detailViewController.beauty = [strongSelf.beauties firstObject];
+      }
+    }
+  } failure:self.fetchFailedBlock];
 }
 
 @end

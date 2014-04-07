@@ -47,6 +47,11 @@
 @property (nonatomic, assign) BOOL shouldShowCellWithName;
 
 /**
+ *  Refetch data from the begining.
+ */
+- (void)refresh;
+
+/**
  *  Common work before fetching beauties.
  *  Subclasses must call `[super fetchBeauties]` first.
  */

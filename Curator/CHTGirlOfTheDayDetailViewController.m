@@ -45,7 +45,7 @@
 
   _beauty = beauty;
   [self.titleView setTitle:_beauty.name subtitle:[NSString dateStringFromString:_beauty.whichDay]];
-  [self fetchBeauties];
+  [self refresh];
 }
 
 #pragma mark - UIViewController
