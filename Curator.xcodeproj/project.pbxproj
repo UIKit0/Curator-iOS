@@ -25,6 +25,8 @@
 		52306D2F1898A2C1008592DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0B1898A2C1008592DA /* Foundation.framework */; };
 		52306D301898A2C1008592DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52306D0F1898A2C1008592DA /* UIKit.framework */; };
 		52306D381898A2C1008592DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52306D361898A2C1008592DA /* InfoPlist.strings */; };
+		52319A3118F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */; };
+		52319A3318F156D600FB126A /* CHTBeautyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52319A3218F156D600FB126A /* CHTBeautyCell.xib */; };
 		525C2ABA18AF262800B236A8 /* CHTLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */; };
 		528F52BE189D4ED000BB3997 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52BD189D4ED000BB3997 /* iPhone.storyboard */; };
 		528F52C1189D510800BB3997 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528F52C0189D510800BB3997 /* iPad.storyboard */; };
@@ -34,6 +36,7 @@
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
 		52A5FC6D1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */; };
+		52D118E218F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */; };
 		52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */; };
 		52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */; };
 		B43541F45A224273A61A2A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF27B99164BF78EEB51A8 /* libPods.a */; };
@@ -77,6 +80,8 @@
 		52306D2D1898A2C1008592DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52306D351898A2C1008592DA /* CuratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CuratorTests-Info.plist"; sourceTree = "<group>"; };
 		52306D371898A2C1008592DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTBeautyOfTheDayCell.xib; sourceTree = "<group>"; };
+		52319A3218F156D600FB126A /* CHTBeautyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTBeautyCell.xib; sourceTree = "<group>"; };
 		525C2AB818AF262800B236A8 /* CHTLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTLoadMoreView.h; sourceTree = "<group>"; };
 		525C2AB918AF262800B236A8 /* CHTLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTLoadMoreView.m; sourceTree = "<group>"; };
 		528F52BD189D4ED000BB3997 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
@@ -92,6 +97,8 @@
 		52A5FC621898DD8500EFB863 /* CHTBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeauty.h; sourceTree = "<group>"; };
 		52A5FC631898DD8500EFB863 /* CHTBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeauty.m; sourceTree = "<group>"; };
 		52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHTTPSessionManagerSpec.m; sourceTree = "<group>"; };
+		52D118E018F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h"; sourceTree = "<group>"; };
+		52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m"; sourceTree = "<group>"; };
 		52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFullScreenPagingBeautyView.h; sourceTree = "<group>"; };
 		52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFullScreenPagingBeautyView.m; sourceTree = "<group>"; };
 		52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFetchingBaseViewController.h; sourceTree = "<group>"; };
@@ -239,6 +246,8 @@
 		529DDF8918E32B7900DE5DE4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				52D118E018F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h */,
+				52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */,
 				529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */,
 				529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */,
 			);
@@ -250,8 +259,10 @@
 			children = (
 				5205412218993CF200A1D16A /* CHTBeautyCell.h */,
 				5205412318993CF200A1D16A /* CHTBeautyCell.m */,
+				52319A3218F156D600FB126A /* CHTBeautyCell.xib */,
 				529DDF8D18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.h */,
 				529DDF8E18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m */,
+				52319A3018F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib */,
 			);
 			name = "Collection View Cells";
 			sourceTree = "<group>";
@@ -385,6 +396,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52319A3318F156D600FB126A /* CHTBeautyCell.xib in Resources */,
+				52319A3118F14EBC00FB126A /* CHTBeautyOfTheDayCell.xib in Resources */,
 				52306D271898A2C1008592DA /* Images.xcassets in Resources */,
 				52306D161898A2C1008592DA /* InfoPlist.strings in Resources */,
 				528F52C1189D510800BB3997 /* iPad.storyboard in Resources */,
@@ -477,6 +490,7 @@
 				529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */,
 				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
 				52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */,
+				52D118E218F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
 				52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */,
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,
@@ -608,9 +622,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -624,9 +638,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Curator/Curator-Prefix.pch";
 				INFOPLIST_FILE = "Curator/Curator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

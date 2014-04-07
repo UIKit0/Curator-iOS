@@ -48,6 +48,8 @@ static NSString *footerIdentifier = @"footerIdentifier";
   self.navigationController.navigationBar.tintColor = [UIColor redColor];
   self.tabBarController.tabBar.tintColor = [UIColor redColor];
   self.collectionView.backgroundColor = [UIColor colorWithRed:0.117 green:0.112 blue:0.106 alpha:1.000];
+  [self.collectionView registerNib:[UINib nibWithNibName:@"CHTBeautyCell" bundle:nil] forCellWithReuseIdentifier:@"BeautyCell"];
+
 
   __weak typeof(self) weakSelf = self;
 
@@ -92,10 +94,18 @@ static NSString *footerIdentifier = @"footerIdentifier";
 
   self.shouldShowCellWithName = YES;
   [self.collectionView addSubview:self.refreshControl];
-  [self refresh];
 }
 
 #pragma mark - Public Methods
+
+- (void)refresh {
+  self.canLoadMore = YES;
+  self.isFetching = NO;
+  self.fetchPage = 1;
+  [self.beauties removeAllObjects];
+  [self.collectionView reloadData];
+  [self fetchBeauties];
+}
 
 - (void)fetchBeauties {
   if (self.isFetching) {
@@ -148,15 +158,6 @@ static NSString *footerIdentifier = @"footerIdentifier";
   if (scrollView.contentOffset.y < scrollView.contentSize.height - scrollView.frame.size.height) {
     return;
   }
-  [self fetchBeauties];
-}
-
-#pragma mark - Private Methods
-
-- (void)refresh {
-  self.canLoadMore = YES;
-  self.isFetching = NO;
-  self.fetchPage = 1;
   [self fetchBeauties];
 }
 
