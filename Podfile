@@ -12,6 +12,7 @@ pod 'NHBalancedFlowLayout', :head
 pod 'CHTCollectionViewWaterfallLayout', :head
 pod 'Nimbus/PagingScrollView'
 pod 'MRCircularProgressView'
+pod 'BDBSplitViewController'
 
 # Testing
 target :CuratorTests, :exclusive => true do

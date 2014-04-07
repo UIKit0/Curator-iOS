@@ -22,6 +22,8 @@
     _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _activityIndicatorView.color = [UIColor whiteColor];
     _activityIndicatorView.hidesWhenStopped = YES;
+    _activityIndicatorView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     [_activityIndicatorView startAnimating];
   }
   return _activityIndicatorView;
@@ -37,6 +39,8 @@
     _textLabel.font = [UIFont boldSystemFontOfSize:17];
     _textLabel.text = @"- 小海嚴選 -";
     [_textLabel sizeToFit];
+    _textLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    _textLabel.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
   }
   return _textLabel;
 }
@@ -69,8 +73,6 @@
     [self addSubview:self.activityIndicatorView];
     [self addSubview:self.textLabel];
 
-    self.activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
-    self.textLabel.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     self.state = CHTLoadMoreStateLoading;
   }
   return self;

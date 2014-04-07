@@ -36,6 +36,7 @@
 		52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC5F1898B32600EFB863 /* CHTHTTPSessionManager.m */; };
 		52A5FC641898DD8500EFB863 /* CHTBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC631898DD8500EFB863 /* CHTBeauty.m */; };
 		52A5FC6D1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */; };
+		52D118E218F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */; };
 		52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */; };
 		52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBC2C518A5FF9F00923865 /* CHTFetchingBaseViewController.m */; };
 		B43541F45A224273A61A2A84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52BF27B99164BF78EEB51A8 /* libPods.a */; };
@@ -96,6 +97,8 @@
 		52A5FC621898DD8500EFB863 /* CHTBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTBeauty.h; sourceTree = "<group>"; };
 		52A5FC631898DD8500EFB863 /* CHTBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTBeauty.m; sourceTree = "<group>"; };
 		52A5FC6C1898FDCE00EFB863 /* CHTHTTPSessionManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTHTTPSessionManagerSpec.m; sourceTree = "<group>"; };
+		52D118E018F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h"; sourceTree = "<group>"; };
+		52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m"; sourceTree = "<group>"; };
 		52D419F618E80A9E0043591C /* CHTFullScreenPagingBeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFullScreenPagingBeautyView.h; sourceTree = "<group>"; };
 		52D419F718E80A9E0043591C /* CHTFullScreenPagingBeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFullScreenPagingBeautyView.m; sourceTree = "<group>"; };
 		52DBC2C418A5FF9F00923865 /* CHTFetchingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFetchingBaseViewController.h; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 		529DDF8918E32B7900DE5DE4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				52D118E018F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h */,
+				52D118E118F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m */,
 				529DDF8A18E32BEC00DE5DE4 /* NSString+Date.h */,
 				529DDF8B18E32BEC00DE5DE4 /* NSString+Date.m */,
 			);
@@ -485,6 +490,7 @@
 				529DDF8F18E4807100DE5DE4 /* CHTBeautyOfTheDayCell.m in Sources */,
 				52DBC2C618A5FF9F00923865 /* CHTFetchingBaseViewController.m in Sources */,
 				52D419F818E80A9E0043591C /* CHTFullScreenPagingBeautyView.m in Sources */,
+				52D118E218F2DB63007D943F /* CHTGirlOfTheDayDetailViewController+BDBDetailViewController.m in Sources */,
 				520541271899614D00A1D16A /* CHTGirlOfTheDayDetailViewController.m in Sources */,
 				52054121189907A700A1D16A /* CHTGirlOfTheDayOverviewController.m in Sources */,
 				52A5FC601898B32600EFB863 /* CHTHTTPSessionManager.m in Sources */,

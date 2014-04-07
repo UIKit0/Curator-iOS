@@ -11,6 +11,7 @@
 #import "CHTHTTPSessionManager.h"
 #import "CHTBeautyOfTheDayCell.h"
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
+#import <BDBSplitViewController/BDBSplitViewController.h>
 
 @interface CHTGirlOfTheDayOverviewController () <CHTCollectionViewDelegateWaterfallLayout>
 @end
@@ -44,14 +45,16 @@
 
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter];
 
-  UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-  self.navigationItem.backBarButtonItem = backItem;
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+  } else {
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backItem;
+  }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  NSIndexPath *indexPath = (NSIndexPath *)sender;
   CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)segue.destinationViewController;
-  vc.beauty = self.beauties[indexPath.item];
+  vc.beauty = (CHTBeauty *)sender;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -69,7 +72,14 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  [self performSegueWithIdentifier:@"Show Detail" sender:indexPath];
+  CHTBeauty *beauty = self.beauties[indexPath.item];
+
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    CHTGirlOfTheDayDetailViewController *vc = (CHTGirlOfTheDayDetailViewController *)[(UINavigationController *)self.splitViewController.detailViewController topViewController];
+    vc.beauty = beauty;
+  } else {
+    [self performSegueWithIdentifier:@"Show Detail" sender:beauty];
+  }
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout

@@ -10,16 +10,25 @@
 #import "CHTHTTPSessionManager.h"
 #import "CHTFullScreenPagingBeautyView.h"
 #import "CHTNavigatonBarTitleView.h"
+#import "CHTGirlOfTheDayDetailViewController+BDBDetailViewController.h"
 #import "NSString+Date.h"
 #import <NHBalancedFlowLayout/NHBalancedFlowLayout.h>
 
 @interface CHTGirlOfTheDayDetailViewController () <NHBalancedFlowLayoutDelegate>
+@property (nonatomic, strong) CHTNavigatonBarTitleView *titleView;
 @property (nonatomic, strong) CHTFullScreenPagingBeautyView *fullScreenView;
 @end
 
 @implementation CHTGirlOfTheDayDetailViewController
 
 #pragma mark - Properties
+
+- (CHTNavigatonBarTitleView *)titleView {
+  if (!_titleView) {
+    _titleView = [[CHTNavigatonBarTitleView alloc] initWithFrame:CGRectMake(0, 0, 230, 44)];
+  }
+  return _titleView;
+}
 
 - (CHTFullScreenPagingBeautyView *)fullScreenView {
   if (!_fullScreenView) {
@@ -29,6 +38,16 @@
   return _fullScreenView;
 }
 
+- (void)setBeauty:(CHTBeauty *)beauty {
+  if ([_beauty isEqual:beauty]) {
+    return;
+  }
+
+  _beauty = beauty;
+  [self.titleView setTitle:_beauty.name subtitle:[NSString dateStringFromString:_beauty.whichDay]];
+  [self fetchBeauties];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -36,9 +55,7 @@
 
   [self.refreshControl removeFromSuperview];
 
-  CHTNavigatonBarTitleView *titleView = [[CHTNavigatonBarTitleView alloc] initWithFrame:CGRectMake(0, 0, 230, 44)];
-  [titleView setTitle:self.beauty.name subtitle:[NSString dateStringFromString:self.beauty.whichDay]];
-  self.navigationItem.titleView = titleView;
+  self.navigationItem.titleView = self.titleView;
 
   self.shouldShowCellWithName = NO;
 
@@ -56,10 +73,16 @@
 
   [self registerCollectionSectionFooterViewForSupplementaryViewOfKind:UICollectionElementKindSectionFooter];
 
-  // Swipe right to go back
-  UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
-  recognizer.direction = UISwipeGestureRecognizerDirectionRight;
-  [self.view addGestureRecognizer:recognizer];
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    self.splitViewController.delegate = self;
+    [self.splitViewController setMasterViewDisplayStyle:BDBMasterViewDisplayStyleSticky animated:NO];
+    [self.splitViewController showMasterViewControllerAnimated:NO completion:nil];
+  } else {
+    // Swipe right to go back
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:recognizer];
+  }
 }
 
 #pragma mark - NHBalancedFlowLayoutDelegate
@@ -82,6 +105,10 @@
 #pragma mark - Public Methods
 
 - (void)fetchBeauties {
+  if (!self.beauty) {
+    return;
+  }
+
   [super fetchBeauties];
 
   [[CHTHTTPSessionManager sharedManager] fetchGirlOfTheDay:self.beauty.whichDay atPage:self.fetchPage success:self.fetchSuccessfulBlock failure:self.fetchFailedBlock];
