@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLabelHeightConstraint;
 @end
 
 @implementation CHTBeautyCell
@@ -24,6 +25,18 @@
   [super prepareForReuse];
 
   [self.imageView cancelCurrentImageLoad];
+}
+
+- (void)layoutSubviews {
+  [super layoutSubviews];
+
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    self.nameLabel.font = [UIFont systemFontOfSize:24];
+    self.nameLabelHeightConstraint.constant = 32;
+  } else {
+    self.nameLabel.font = [UIFont systemFontOfSize:12];
+    self.nameLabelHeightConstraint.constant = 25;
+  }
 }
 
 #pragma mark - Public Methods

@@ -52,6 +52,7 @@
                 <outlet property="imageView" destination="9WO-xg-yXs" id="BQ5-4Y-nty"/>
                 <outlet property="indicator" destination="3ab-Pu-DlQ" id="H9E-qH-9j6"/>
                 <outlet property="nameLabel" destination="XYB-8V-Xet" id="L4F-k2-LR9"/>
+                <outlet property="nameLabelHeightConstraint" destination="AiM-d4-apU" id="O3h-I0-41I"/>
             </connections>
         </collectionViewCell>
     </objects>

@@ -128,6 +128,10 @@
 - (void)present {
   [self deviceOrientationDidChange:nil];
 
+  [self.pagingScrollView reloadData];
+  self.pagingScrollView.centerPageIndex = self.selectedIndex;
+  [self configureInfoDisplay];
+
   UIWindow *window = [UIApplication sharedApplication].keyWindow;
   [window addSubview:self];
 
@@ -135,9 +139,6 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     self.alpha = 1;
   } completion:^(BOOL finished) {
-    [self.pagingScrollView reloadData];
-    self.pagingScrollView.centerPageIndex = self.selectedIndex;
-    [self configureInfoDisplay];
   }];
 }
 
@@ -153,9 +154,8 @@
 #pragma mark - Private Methods
 
 - (void)configureInfoDisplay {
-  CHTBeauty *beauty = self.beauties[self.pagingScrollView.centerPageIndex];
-
   if (self.mode == CHTFullScreenPagingBeautyViewDisplayModeNmae) {
+    CHTBeauty *beauty = self.beauties[self.pagingScrollView.centerPageIndex];
     self.infoLabel.text = beauty.name;
   } else {
     self.infoLabel.text = [NSString stringWithFormat:@"%@/%@", @(self.pagingScrollView.centerPageIndex + 1), @([self.beauties count])];
