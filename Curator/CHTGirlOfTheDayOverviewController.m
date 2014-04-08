@@ -116,7 +116,7 @@
 
     if (strongSelf.fetchSuccessfulBlock) {
       strongSelf.fetchSuccessfulBlock(beauties, totalCount, responseObject);
-      if (strongSelf.fetchPage == 2) {
+      if (strongSelf.detailViewController && !strongSelf.detailViewController.beauty) {
         strongSelf.detailViewController.beauty = [strongSelf.beauties firstObject];
       }
     }
